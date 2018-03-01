@@ -11,6 +11,7 @@ CConfigFile::CConfigFile( void )
 CConfigFile::CConfigFile( const CConfigFile& obj )
 : strConfigFile( obj.strConfigFile )
 , strFileBuffer( obj.strFileBuffer )
+, prop_ConfigFile( obj.prop_ConfigFile )
 {
 }
 
@@ -19,6 +20,7 @@ CConfigFile::~CConfigFile( void )
 	strConfigFile.clear();
 	strFileBuffer.clear();
 
+	prop_ConfigFile.clear();
 }
 
 bool CConfigFile::set_Config_File( std::string file_path )
@@ -40,6 +42,9 @@ bool CConfigFile::Load_parameters_from_file( std::string file_path )
 	}
 
 	if( !is_Valid() ) return false;
+
+	if( !prop_ConfigFile.fromConfigFile( strConfigFile.c_str() ) )
+		return false;
 
 	return Parse_Parameters_Load();
 }
