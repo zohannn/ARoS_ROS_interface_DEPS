@@ -1,0 +1,7 @@
+In order to use CMatrix on a project, use the following lines in your CMakeLists to configure it properly
+
+#--------------------------------------------------------------------------------------------
+
+include( $ENV{MAINPROJECT}/Libraries/CMakeScripts/CommonScripts.cmake )
+
+Configure_Package( Matrix )

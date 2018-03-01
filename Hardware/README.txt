@@ -1,0 +1,1 @@
+Copy the file ExternalModules.cmake to %YARP_ROOT%/conf
