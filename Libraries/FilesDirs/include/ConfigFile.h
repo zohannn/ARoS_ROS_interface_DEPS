@@ -4,6 +4,7 @@
 #pragma once
 
 #include <string>
+#include <yarp/os/Property.h>
 
 /// <summary>CConfigFile implments the management of configuration files.
 /// <para>Provides an abstraction layer to the required functions of managing files.
@@ -75,6 +76,8 @@ protected:
 		///	<summary>Buffer that holds the information to be written to a file.</summary>
 		strFileBuffer;
 
+	///	<summary>Property used to load a file.</summary>
+	yarp::os::Property prop_ConfigFile;
 
 };
 

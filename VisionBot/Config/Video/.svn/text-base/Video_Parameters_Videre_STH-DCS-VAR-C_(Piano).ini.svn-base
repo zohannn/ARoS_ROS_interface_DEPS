@@ -1,0 +1,25 @@
+#Video parameters
+
+[Exposure]
+Auto 0
+Value 45
+
+[Gain]
+Auto 0
+Value 40
+
+[Brightness]
+Auto 0
+Value 20
+
+[Gamma]
+Value 0
+
+[Saturation]
+Value 23
+
+[White_Balance]
+Auto 0
+Red 0
+Green 0
+Blue 0

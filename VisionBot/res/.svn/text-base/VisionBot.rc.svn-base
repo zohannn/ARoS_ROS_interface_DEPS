@@ -1,0 +1,692 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VisionBot"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "VisionBot v1.0 beta",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "MARL - Mobile and Anthropomorphic Robotics Laboratory. Copyright (C) 2011 - 2013",IDC_STATIC,40,25,188,16
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_VISIONBOT_DIALOG DIALOGEX 0, 0, 256, 45
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Vision System for Robots"
+MENU IDR_MAIN_MENU
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,198,0,30,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Cancel",IDCANCEL,222,0,31,14,NOT WS_VISIBLE
+    LTEXT           "Capturing @ ... fps",IDC_STATIC_FRAME_COUNTER,30,19,210,8
+    GROUPBOX        "Performance",IDC_STATIC,7,7,239,29
+    CONTROL         "",IDC_CHECK_FRAME_RATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,19,16,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "VisionBot MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "VisionBot"
+            VALUE "LegalCopyright", "Copyright (C) 2007"
+            VALUE "OriginalFilename", "VisionBot.EXE"
+            VALUE "ProductName", "VisionBot Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_VISIONBOT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About VisionBot..."
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Portuguese (Portugal) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PTG)
+LANGUAGE LANG_PORTUGUESE, SUBLANG_PORTUGUESE
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CONNECTION DIALOGEX 0, 0, 243, 158
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "YARP Communications Manager"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,136,229,14
+    PUSHBUTTON      "Cancel",IDCANCEL,186,122,50,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_NAME,141,29,82,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PEER_NAME,142,63,82,12,ES_AUTOHSCROLL
+    LISTBOX         IDC_LIST_COMMS,15,18,99,68,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Connection threads",IDC_STATIC,7,7,114,123
+    PUSHBUTTON      "Start all",IDC_BUTTON_CONNECTION_START_ALL,16,91,99,14
+    PUSHBUTTON      "Stop all",IDC_BUTTON_CONNECTION_STOP_ALL,16,110,99,14
+    GROUPBOX        "Options",IDC_STATIC,127,7,109,123
+    PUSHBUTTON      "Start / Stop",IDC_BUTTON_CONNECTION_START_STOP,138,107,90,14
+    CTEXT           "Status:",IDC_STATIC_STATUS,138,89,89,11,WS_BORDER
+    GROUPBOX        "Name",IDC_STATIC,138,17,90,31
+    GROUPBOX        "Peer Name",IDC_STATIC,138,52,90,31
+END
+
+IDD_DIALOG_PANTILT DIALOGEX 0, 0, 295, 185
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pan Tilt"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_PAN,120,44,40,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TILT,204,44,40,12,ES_CENTER | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,190,164,98,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,164,31,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Move Pan and Tilt",IDC_BUTTON_SET_PAN_TILT,111,82,79,14
+    PUSHBUTTON      "Move",IDC_BUTTON_SET_PAN,119,61,31,14
+    PUSHBUTTON      "Get",IDC_BUTTON_GET_PAN,154,61,31,14
+    PUSHBUTTON      "Move",IDC_BUTTON_SET_TILT,205,61,31,14
+    PUSHBUTTON      "Get",IDC_BUTTON_GET_TILT,239,61,31,14
+    GROUPBOX        "Pan",IDC_STATIC,111,18,79,62
+    LTEXT           "�",IDC_STATIC_UNITS_PAN,165,45,11,8
+    GROUPBOX        "Tilt",IDC_STATIC,196,18,79,62
+    LTEXT           "�",IDC_STATIC_UNITS_TILT,249,45,11,8
+    LTEXT           "Angle: ... �",IDC_STATIC_CURRENT_PAN,120,29,64,8
+    LTEXT           "Angle: ... �",IDC_STATIC_CURRENT_TILT,204,29,66,8
+    PUSHBUTTON      "Get Pan and Tilt",IDC_BUTTON_GET_PAN_TILT,196,82,79,14
+    GROUPBOX        "Control Mode",IDC_STATIC,7,7,90,53
+    PUSHBUTTON      "Pan",IDC_BUTTON_STOP_PAN,15,74,35,14
+    PUSHBUTTON      "Tilt",IDC_BUTTON_STOP_TILT,53,74,35,14
+    GROUPBOX        "STOP",IDC_STATIC,7,63,90,48
+    PUSHBUTTON      "Pan and Tilt",IDC_BUTTON_STOP_PANTILT,15,90,73,14
+    PUSHBUTTON      "Pan",IDC_BUTTON_INIT_PAN,14,125,33,14
+    PUSHBUTTON      "Tilt",IDC_BUTTON_INIT_TILT,53,125,34,14
+    PUSHBUTTON      "Pan and Tilt",IDC_BUTTON_INIT_PANTILT,14,141,73,14
+    GROUPBOX        "Initialize",IDC_STATIC,7,114,90,48
+    GROUPBOX        "Look to position ( cm )",IDC_STATIC,102,108,186,53
+    LTEXT           "X:",IDC_STATIC,108,129,8,8
+    EDITTEXT        IDC_EDIT_X_POS,118,126,40,14,ES_AUTOHSCROLL
+    LTEXT           "Y:",IDC_STATIC,170,129,8,8
+    EDITTEXT        IDC_EDIT_Y_POS,180,126,40,14,ES_AUTOHSCROLL
+    LTEXT           "Z:",IDC_STATIC,230,129,8,8
+    EDITTEXT        IDC_EDIT_Z_POS,240,126,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Look",IDC_BUTTON_LOOK_TO_POSITION,107,142,173,14
+    CONTROL         "Position",IDC_RADIO_CONTROL_MODE_POSITION,"Button",BS_AUTORADIOBUTTON | WS_GROUP,23,20,41,10
+    CONTROL         "Velocity",IDC_RADIO_CONTROL_MODE_VELOCITY,"Button",BS_AUTORADIOBUTTON,23,38,41,10
+    GROUPBOX        "Control",IDC_STATIC,103,7,184,97
+END
+
+IDD_DIALOG_SEGMENTATION DIALOGEX 0, 0, 247, 258
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Colour Operations"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_COMBO_COLOUR,29,7,83,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider1",IDC_SLIDER_MIN_HUE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,24,49,100,15
+    CONTROL         "Slider2",IDC_SLIDER_MAX_HUE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,123,49,100,15
+    CONTROL         "Slider1",IDC_SLIDER_MIN_SAT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,24,95,100,15
+    CONTROL         "Slider2",IDC_SLIDER_MAX_SAT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,123,95,100,15
+    CONTROL         "Slider1",IDC_SLIDER_MIN_VAL,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,24,141,100,15
+    CONTROL         "Slider2",IDC_SLIDER_MAX_VAL,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,123,141,100,15
+    CONTROL         "Open",IDC_RADIO_OPEN,"Button",BS_AUTORADIOBUTTON | WS_GROUP,30,204,33,10
+    CONTROL         "Close",IDC_RADIO_CLOSE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,30,223,33,10
+    EDITTEXT        IDC_EDIT_ERODE,122,204,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_ERODE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,153,204,10,14
+    EDITTEXT        IDC_EDIT_DILATE,122,223,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_DILATE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,153,223,10,14
+    DEFPUSHBUTTON   "OK",IDOK,174,235,66,14
+    PUSHBUTTON      "Save to file...",IDC_BUTTON_SAVE_FILE,174,201,66,14
+    PUSHBUTTON      "Load from file...",IDC_BUTTON_LOAD_FILE,174,184,66,14
+    PUSHBUTTON      "Cancel",IDCANCEL,174,218,66,14,NOT WS_VISIBLE
+    LTEXT           "Colour",IDC_STATIC,7,10,21,8
+    LTEXT           "Min : ",IDC_STATIC_MIN_HUE,29,68,42,8
+    LTEXT           "Max : ",IDC_STATIC_MAX_HUE,128,68,42,8
+    GROUPBOX        "Hue",IDC_STATIC,15,37,216,43
+    LTEXT           "Min : ",IDC_STATIC_MIN_SAT,29,114,42,8
+    LTEXT           "Max : ",IDC_STATIC_MAX_SAT,128,114,42,8
+    GROUPBOX        "Saturation",IDC_STATIC,15,83,216,43
+    LTEXT           "Min : ",IDC_STATIC_MIN_VAL,29,159,42,8
+    LTEXT           "Max : ",IDC_STATIC_MAX_VAL,128,159,42,8
+    GROUPBOX        "Value",IDC_STATIC,15,129,216,43
+    GROUPBOX        "Segmentation Parameters",IDC_STATIC,7,24,233,154
+    GROUPBOX        "Morphologic Operations",IDC_STATIC,7,181,163,71
+    LTEXT           "Erode :",IDC_STATIC,96,207,24,8
+    LTEXT           "Dilate :",IDC_STATIC,95,226,23,8
+    GROUPBOX        "Operation type",IDC_STATIC,17,191,59,55
+    GROUPBOX        "Iterations",IDC_STATIC,85,191,79,55
+END
+
+IDD_DIALOG_VIDEO_PARAMETERS DIALOGEX 0, 0, 290, 141
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Video parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,194,120,87,14
+    PUSHBUTTON      "Cancel",IDCANCEL,193,104,87,14
+    GROUPBOX        "Exposure",IDC_STATIC,7,7,87,33
+    CONTROL         "Auto",IDC_CHECK_EXPOSURE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,19,31,10
+    EDITTEXT        IDC_EDIT_EXPOSURE,50,17,36,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_EXPOSURE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,84,17,10,14
+    GROUPBOX        "Gain",IDC_STATIC,100,7,87,33
+    CONTROL         "Auto",IDC_CHECK_GAIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,108,19,31,10
+    EDITTEXT        IDC_EDIT_GAIN,143,17,36,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_GAIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,178,16,10,14
+    GROUPBOX        "Brightness",IDC_STATIC,196,7,87,33
+    CONTROL         "Auto",IDC_CHECK_BRIGHTNESS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,203,18,31,10
+    EDITTEXT        IDC_EDIT_BRIGHTNESS,238,17,36,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_BRIGHTNESS,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,273,17,10,14
+    GROUPBOX        "Gamma",IDC_STATIC,100,41,87,33
+    EDITTEXT        IDC_EDIT_GAMMA,126,52,36,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_GAMMA,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,164,52,10,14
+    GROUPBOX        "White Balance",IDC_STATIC,7,41,87,85
+    CONTROL         "Auto",IDC_CHECK_BALANCE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,21,54,31,10
+    EDITTEXT        IDC_EDIT_RED,41,70,36,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_RED,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,77,70,10,14
+    EDITTEXT        IDC_EDIT_BLUE,41,106,36,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_BLUE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,77,105,10,14
+    PUSHBUTTON      "Save to file...",IDC_BUTTON_SAVE_VIDEO_PAR,104,120,87,14
+    PUSHBUTTON      "Load from file...",IDC_BUTTON_LOAD_VIDEO_PAR,104,104,87,14
+    LTEXT           "Blue",IDC_STATIC,22,108,15,8
+    LTEXT           "Red",IDC_STATIC,23,73,14,8
+    GROUPBOX        "Saturation",IDC_STATIC,194,42,87,33
+    EDITTEXT        IDC_EDIT_SATURATION,221,53,36,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_SATURATION,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,259,53,10,14
+    EDITTEXT        IDC_EDIT_GREEN,41,89,36,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_GREEN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,77,88,11,14
+    LTEXT           "Green",IDC_STATIC,17,91,20,8
+END
+
+IDD_DIALOG_YARPPORT_CONFIGURATION DIALOGEX 0, 0, 135, 63
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "YARP Ports"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,17,42,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,78,42,50,14
+    EDITTEXT        IDC_EDIT_YARPPORT_LOCAL,53,7,75,14,ES_AUTOHSCROLL
+    LTEXT           "Local Port:",IDC_STATIC,18,10,35,8
+    EDITTEXT        IDC_EDIT_YARPPORT_REMOTE,53,24,75,14,ES_AUTOHSCROLL
+    LTEXT           "Remote Port:",IDC_STATIC_REMOTE,9,26,44,8
+END
+
+IDD_DIALOG_INFO_AROS DIALOGEX 0, 0, 475, 289
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Task Information"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,363,127,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Cancel",IDCANCEL,417,127,50,14,NOT WS_VISIBLE
+    LTEXT           "Object information here...",IDC_STATIC_OBJECT_INFO,6,18,264,264,WS_BORDER
+    LTEXT           "Common Sub Goals...",IDC_STATIC_CSG,282,143,186,139,WS_BORDER
+    LTEXT           "Actions ...",IDC_STATIC_ACTIONS,282,18,186,102,WS_BORDER
+    CONTROL         "Object Information",IDC_CHECK_UPDATE_OBJ_INFO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,6,77,10
+    CONTROL         "Actions",IDC_CHECK_ACTIONS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,282,6,39,10
+    CONTROL         "Common Sub Goals",IDC_CHECK_CSG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,282,132,77,10
+END
+
+IDD_DIALOG_HUMAN_INFO DIALOGEX 0, 0, 250, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Human Info"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Movement",IDC_CHECK_SHOW_IMAGE_MOVEMENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,187,99,49,10
+    CONTROL         "Spatial segmentation",IDC_CHECK_SHOW_IMAGE_STEREO,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,187,111,56,20
+    EDITTEXT        IDC_EDIT_XMIN,31,114,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_XMIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,71,114,11,14
+    EDITTEXT        IDC_XMAX,109,114,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_XMAX,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,149,114,11,14
+    EDITTEXT        IDC_EDIT_YMIN,31,134,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_YMIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,71,134,11,14
+    EDITTEXT        IDC_EDIT_YMAX,109,134,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_YMAX,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,149,134,11,14
+    EDITTEXT        IDC_EDIT_ZMIN,31,151,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_ZMIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,71,151,11,14
+    EDITTEXT        IDC_EDIT_ZMAX,109,151,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_ZMAX,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,149,151,11,14
+    EDITTEXT        IDC_EDIT_MOV_HAND_IDLE,49,33,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MOV_HAND_LOW,114,33,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MOV_HAND_MEDIUM,182,33,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MOV_BODY_IDLE,49,54,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MOV_BODY_LOW,114,54,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MOV_BODY_MEDIUM,182,54,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,167,184,75,14
+    PUSHBUTTON      "Cancel",IDCANCEL,206,188,37,14,NOT WS_VISIBLE | WS_DISABLED
+    GROUPBOX        "Image display",IDC_STATIC,179,87,64,47
+    GROUPBOX        "Spatial segmentation (mm)",IDC_STATIC,7,87,166,93
+    LTEXT           "X:",IDC_STATIC,19,118,8,8
+    LTEXT           "X:",IDC_STATIC,98,118,8,8
+    LTEXT           "Y:",IDC_STATIC,19,138,8,8
+    LTEXT           "Y:",IDC_STATIC,98,138,8,8
+    LTEXT           "Z:",IDC_STATIC,19,154,8,8
+    LTEXT           "Z:",IDC_STATIC,98,154,8,8
+    LTEXT           "Hand",IDC_STATIC,23,36,18,8
+    LTEXT           "Body",IDC_STATIC,23,57,17,8
+    GROUPBOX        "Movement classification",IDC_STATIC,7,7,236,76
+    GROUPBOX        "Min",IDC_STATIC,11,101,75,72,BS_CENTER
+    GROUPBOX        "Max",IDC_STATIC,91,101,75,72,BS_CENTER
+    GROUPBOX        "Idle",IDC_STATIC,43,20,53,56,BS_CENTER
+    GROUPBOX        "Low",IDC_STATIC,108,21,53,56,BS_CENTER
+    GROUPBOX        "Medium",IDC_STATIC,176,20,53,56,BS_CENTER
+    PUSHBUTTON      "Save to file...",IDC_BUTTON_HUMANINFO_SAVE,7,184,76,14
+    PUSHBUTTON      "Load from file...",IDC_BUTTON_HUMANINFO_LOAD,86,184,78,14
+    GROUPBOX        "Movement Info",IDC_STATIC,179,136,64,43
+    CONTROL         "Hand",IDC_CHECK_HAND_MOVEMENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,187,149,33,10
+    CONTROL         "Body",IDC_CHECK_BODY_MOVEMENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,187,164,32,10
+END
+
+IDD_DIALOG_GESTURE_PARAMETERS DIALOGEX 0, 0, 571, 224
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gesture parameters"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,143,202,179,14
+    PUSHBUTTON      "Cancel",IDCANCEL,105,197,65,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_SLIDER_HAND_MIN_HUE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,351,29,100,15
+    CONTROL         "",IDC_SLIDER_HAND_MAX_HUE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,449,29,100,15
+    CONTROL         "",IDC_SLIDER_HAND_MIN_SAT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,351,77,100,15
+    CONTROL         "",IDC_SLIDER_HAND_MAX_SAT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,449,77,100,15
+    CONTROL         "",IDC_SLIDER_HAND_MIN_VAL,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,351,122,100,15
+    CONTROL         "",IDC_SLIDER_HAND_MAX_VAL,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,449,122,100,15
+    CONTROL         "Open",IDC_RADIO_HAND_OPEN,"Button",BS_AUTORADIOBUTTON | WS_GROUP,353,181,33,10
+    CONTROL         "Close",IDC_RADIO_HAND_CLOSE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,387,181,33,10
+    EDITTEXT        IDC_EDIT_HAND_ERODE,455,178,24,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_HAND_ERODE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,479,178,11,14
+    EDITTEXT        IDC_EDIT_HAND_DILATE,511,178,24,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_HAND_DILATE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,535,178,11,14
+    CONTROL         "Gesture detection active",IDC_CHECK_GESTURE_ACTIVE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,18,95,10
+    EDITTEXT        IDC_EDIT_POINT_SIDE_DIFF,99,31,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_POINT_SIDE_DIFF,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,139,31,11,14
+    PUSHBUTTON      "Save to file...",IDC_BUTTON_SAVE_FILE,75,202,65,14
+    PUSHBUTTON      "Load from file...",IDC_BUTTON_LOAD_FILE,7,202,65,14
+    LTEXT           "Min : ",IDC_STATIC_HAND_MIN_HUE,355,50,42,8
+    LTEXT           "Max : ",IDC_STATIC_HAND_MAX_HUE,455,50,42,8
+    GROUPBOX        "Hue",IDC_STATIC,341,18,216,43
+    LTEXT           "Min : ",IDC_STATIC_HAND_MIN_SAT,355,96,42,8
+    LTEXT           "Max : ",IDC_STATIC_HAND_MAX_SAT,455,96,42,8
+    GROUPBOX        "Saturation",IDC_STATIC,341,64,216,43
+    LTEXT           "Min : ",IDC_STATIC_HAND_MIN_VAL,355,141,42,8
+    LTEXT           "Max : ",IDC_STATIC_HAND_MAX_VAL,455,141,42,8
+    GROUPBOX        "Value",IDC_STATIC,341,109,216,43
+    GROUPBOX        "Morphologic Operations",IDC_STATIC,341,157,216,52
+    LTEXT           "Erode:",IDC_STATIC,433,181,22,8
+    LTEXT           "Dilate:",IDC_STATIC,489,181,22,8
+    GROUPBOX        "Operation type",IDC_STATIC,347,168,75,34
+    GROUPBOX        "Iterations",IDC_STATIC,427,168,122,34
+    GROUPBOX        "Hand segmentation",IDC_STATIC,331,7,232,210
+    GROUPBOX        "General",IDC_STATIC,7,7,155,93
+    LTEXT           "Pointing/side difference:",IDC_STATIC,15,34,79,8
+    GROUPBOX        "Hu moments: Pointing",IDC_STATIC,7,102,155,93
+    EDITTEXT        IDC_EDIT_HU1_PT_MIN,27,122,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU1_PT_MAX,91,122,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU2_PT_MIN,27,140,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU2_PT_MAX,91,140,61,14,ES_AUTOHSCROLL
+    LTEXT           "M1",IDC_STATIC,13,125,10,8
+    LTEXT           "M2",IDC_STATIC,13,143,10,8
+    LTEXT           "M3",IDC_STATIC,13,159,10,8
+    EDITTEXT        IDC_EDIT_HU3_PT_MIN,27,156,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU3_PT_MAX,91,156,61,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Update",IDC_BUTTON_UPDATE_HU_POINTING,27,172,125,14
+    GROUPBOX        "Hu moments: Above grip",IDC_STATIC,167,7,155,93
+    EDITTEXT        IDC_EDIT_HU1_AG_MIN,187,27,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU1_AG_MAX,251,27,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU2_AG_MIN,187,44,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU2_AG_MAX,251,44,61,14,ES_AUTOHSCROLL
+    LTEXT           "M1",IDC_STATIC,173,30,10,8
+    LTEXT           "M2",IDC_STATIC,173,47,10,8
+    LTEXT           "M3",IDC_STATIC,173,64,10,8
+    EDITTEXT        IDC_EDIT_HU3_AG_MIN,187,61,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU3_AG_MAX,251,61,61,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Update",IDC_BUTTON_UPDATE_HU_ABOVE,187,77,125,14
+    GROUPBOX        "Hu moments: Side grip",IDC_STATIC,167,102,155,93
+    EDITTEXT        IDC_EDIT_HU1_SG_MIN,187,121,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU1_SG_MAX,251,121,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU2_SG_MIN,187,140,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU2_SG_MAX,251,140,61,14,ES_AUTOHSCROLL
+    LTEXT           "M1",IDC_STATIC,173,125,10,8
+    LTEXT           "M2",IDC_STATIC,173,143,10,8
+    LTEXT           "M3",IDC_STATIC,173,159,10,8
+    EDITTEXT        IDC_EDIT_HU3_SG_MIN,187,156,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HU3_SG_MAX,251,156,61,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Update",IDC_BUTTON_UPDATE_HU_SIDE,187,172,125,14
+    LTEXT           "Min",IDC_STATIC,211,16,12,8
+    LTEXT           "Max",IDC_STATIC,274,16,14,8
+    LTEXT           "Min",IDC_STATIC,211,112,12,8
+    LTEXT           "Max",IDC_STATIC,274,112,14,8
+    LTEXT           "Min",IDC_STATIC,51,112,12,8
+    LTEXT           "Max",IDC_STATIC,114,112,14,8
+    GROUPBOX        "Hu parameters 10 power",IDC_STATIC,15,49,140,45
+    EDITTEXT        IDC_EDIT_HU_POWER_M1,39,61,22,14,ES_AUTOHSCROLL
+    LTEXT           "M1:",IDC_STATIC,24,64,13,8
+    EDITTEXT        IDC_EDIT_HU_POWER_M2,80,61,22,14,ES_AUTOHSCROLL
+    LTEXT           "M2:",IDC_STATIC,65,64,13,8
+    EDITTEXT        IDC_EDIT_HU_POWER_M3,121,61,22,14,ES_AUTOHSCROLL
+    LTEXT           "M3:",IDC_STATIC,106,64,13,8
+    PUSHBUTTON      "Update",IDC_BUTTON_UPDATE_HU_POWER,22,77,125,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG_CONNECTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+
+    IDD_DIALOG_PANTILT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 288
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_DIALOG_SEGMENTATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 251
+    END
+
+    IDD_DIALOG_VIDEO_PARAMETERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_DIALOG_YARPPORT_CONFIGURATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 128
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_DIALOG_INFO_AROS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 468
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 282
+    END
+
+    IDD_DIALOG_HUMAN_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_DIALOG_GESTURE_PARAMETERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 564
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 217
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\VisionBot.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\VisionBot.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN_MENU MENU
+BEGIN
+    POPUP "Main"
+    BEGIN
+        MENUITEM "Start Grabber",               ID_MAIN_MENU_START
+        MENUITEM "Stop Grabber",                ID_MAIN_MENU_STOP, GRAYED
+        POPUP "Task"
+        BEGIN
+            MENUITEM "---------- ARoS ----------",  ID_TASK_SEPARATOR_ROBOT_AROS, GRAYED
+            MENUITEM "Construction",                ID_MAIN_TASK_CONSTRUCTION
+            MENUITEM "Drinking",                    ID_MAIN_TASK_DRINKING
+            MENUITEM "TUM Integration",             ID_MAIN_TASK_TUM_INTEGRATION
+            MENUITEM "Construction Toy Robot Full (SVS)", ID_MAIN_TASK_CONSTRUCTIONTOYROBOTFULL_SVS
+            MENUITEM "Construction Toy Robot Full (AVT)", ID_MAIN_TASK_CONSTRUCTIONTOYROBOTFULL_AVT
+            MENUITEM "Colour Learning",             ID_MAIN_TASK_COLOURLEARNING
+            MENUITEM "Face Tracking",               ID_MAIN_TASK_FACETRACKING
+            MENUITEM "Toy Robot Learning",          ID_MAIN_TASK_TOYROBOTLEARNING
+            MENUITEM "Differential Kinematics",     ID_MAIN_TASK_DIFFERENTIAL_KINEMATICS
+            MENUITEM "Computer Assembly",           ID_MAIN_TASK_COMPUTERASSEMBLY
+            MENUITEM SEPARATOR
+            MENUITEM "----- Dumbo / Jumbo -----",   ID_TASK_SEPARATOR_ROBOT_DUMBO_JUMBO, GRAYED
+            MENUITEM "Play Piano",                  ID_MAIN_TASK_PLAYPIANO
+            MENUITEM "HR Transport",                ID_MAIN_TASK_HRTRANSPORT
+            MENUITEM SEPARATOR
+            MENUITEM "----- Medium sized robots -----", ID_TASK_SEPARATOR_ROBOT_MEDIUMSIZED, GRAYED
+            MENUITEM "Mobile Robot Target Acquisition", ID_MAIN_TASK_MOBILE_ROBOT_TARGET_ACQUISITION
+            MENUITEM SEPARATOR
+            MENUITEM "---------- Test area ----------", ID_TASK_, GRAYED
+            MENUITEM "Test stuff",                  ID_MAIN_TASK_TEST_STUFF
+        END
+        MENUITEM "Exit",                        ID_MAIN_MENU_EXIT
+    END
+    POPUP "Image"
+    BEGIN
+        POPUP "Source", MENUBREAK
+        BEGIN
+            MENUITEM "SVS Video",                   ID_IMAGE_SOURCE_SVSVIDEO, CHECKED
+            MENUITEM "SVS File...",                 ID_IMAGE_SOURCE_SVSFILE
+            MENUITEM "Image file...",               ID_IMAGE_SOURCE_FILE
+            MENUITEM "OpenCV: Camera",              ID_IMAGE_SOURCE_OPENCVCAMERA
+            MENUITEM "OpenCV: Video file...",       ID_IMAGE_SOURCE_OPENCV_VIDEO_FILE
+            MENUITEM "YARP Port",                   ID_IMAGE_SOURCE_YARPPORT
+            MENUITEM "CMU 1394",                    ID_IMAGE_SOURCE_CMU1394
+            MENUITEM "PS3Eye",                      ID_IMAGE_SOURCE_PS3EYE
+        END
+        POPUP "Stream"
+        BEGIN
+            MENUITEM "Original -> ...",             ID_MENU_IMAGE_STREAM_ORIGINAL
+            MENUITEM "Processed -> ...",            ID_MENU_IMAGE_STREAM_PROCESSED
+        END
+        MENUITEM "Processing",                  ID_IMAGE_PROCESSING, CHECKED
+        MENUITEM "Show image",                  ID_IMAGE_SHOWIMAGE
+        MENUITEM "Frame saving",                ID_IMAGE_FRAMESAVING
+        MENUITEM "Save to file...",             ID_IMAGE_SAVE_TO_FILE
+    END
+    POPUP "Stereo"
+    BEGIN
+        MENUITEM "Processing",                  ID_IMAGE_STEREOPROCESSING
+        MENUITEM "Display disparity",           ID_STEREO_DISPLAY_DISPARITY
+        MENUITEM "Save disparity image...",     ID_STEREO_SAVEDISPARITYIMAGE
+    END
+    POPUP "Colour operations"
+    BEGIN
+        MENUITEM "Segmentation Feedback",       ID_MAIN_MENU_SEGMENTATION_FEEDBACK
+        MENUITEM "Operations ...",              ID_MAIN_MENU_SEGMENTATION
+    END
+    POPUP "Options"
+    BEGIN
+        MENUITEM "YARP Connections...",         ID_MAIN_MENU_CONNECT_ROUTER
+        MENUITEM "Pan Tilt ...",                ID_MAIN_MENU_PAN_TILT
+        MENUITEM "Video Parameters...",         ID_MAIN_MENU_VIDEO_PARAMETERS
+        MENUITEM "Human Info...",               ID_MAIN_MENU_HUMAN_INFO
+        MENUITEM "Gesture parameters...",       ID_MAINMENU_GESTUREPARAMETERS
+    END
+    POPUP "Training"
+    BEGIN
+        MENUITEM "Start acquisition",           ID_MAIN_MENU_START_HAND_ACQ
+        MENUITEM "Stop aquisition",             ID_MAIN_MENU_STOP_HAND_ACQ
+    END
+END
+
+#endif    // Portuguese (Portugal) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\VisionBot.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

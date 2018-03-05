@@ -7,7 +7,6 @@
 /// in case the user is not using YARP</summary>
 #ifdef USE_YARP
 	#include <yarp/os/Semaphore.h>
-	#include <yarp/os/Bottle.h>
 #else
 namespace yarp{
 	namespace os{ 

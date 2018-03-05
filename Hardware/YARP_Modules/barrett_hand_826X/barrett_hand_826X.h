@@ -4,6 +4,9 @@
 #include <yarp/dev/DeviceDriver.h>
 #include <yarp/dev/ControlBoardInterfaces.h>
 
+#include <serial_asio.h>
+
+/*
 #if defined( USE_BOOST_SERIAL_ASIO )
 	#include <serial_asio.h>
 #elif defined( USE_ACE_SERIAL_IO )
@@ -11,7 +14,7 @@
 #else
 	#error Serial port in barrett_hand_826X module, incorrectly configured.
 #endif
-
+*/
 #include "barrett_hand_definitions.h"
 
 namespace yarp
@@ -32,12 +35,14 @@ public:
 	BarrettHand826X( void );
 
 protected:
+	yarp::dev::serial_asio serial_port;
+/*
 #if defined( USE_BOOST_SERIAL_ASIO )
 	yarp::dev::serial_asio serial_port;
 #elif defined( USE_ACE_SERIAL_IO )
 	yarp::dev::Serial_IO serial_port;
 #endif
-
+*/
 private:
 	char BHand_Finger_ID[ BarrettHand::Finger::BARRETT_HAND_NUMBER_OF_DOF ];
 	

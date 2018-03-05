@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/VisionBot/!svn/ver/1155/trunk/Core
+END
+StdAfx.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/VisionBot/!svn/ver/935/trunk/Core/StdAfx.h
+END
+VisionBot.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/VisionBot/!svn/ver/935/trunk/Core/VisionBot.h
+END
+ProcessThread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/VisionBot/!svn/ver/1155/trunk/Core/ProcessThread.cpp
+END
+StdAfx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/VisionBot/!svn/ver/935/trunk/Core/StdAfx.cpp
+END
+ProcessThread.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/VisionBot/!svn/ver/1052/trunk/Core/ProcessThread.h
+END
+VisionBot.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/VisionBot/!svn/ver/935/trunk/Core/VisionBot.cpp
+END

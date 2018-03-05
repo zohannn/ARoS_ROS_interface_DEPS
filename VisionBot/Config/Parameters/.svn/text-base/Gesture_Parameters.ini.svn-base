@@ -1,0 +1,27 @@
+# Gesture classification parameters
+
+# General parameters
+# Active: whether to use or not the gesture detection.
+# Point_or_side_diff: Width difference to distinguish the gestures pointing and side grip, bellow this value the gesture is considered pointing.
+[General]
+Active yes
+Point_or_side_diff 41
+
+# Hu moments parameters
+# power: power of multiplier for Hu parameters for each moment,
+# each parameter will be multiplied by 10^power
+# (first pair)^(first power), (second pair)^(second power), ...
+# each gesture has a sequence of (min,max) values for each moment used
+# ex: m1_min m1_max m2_min m2_max ...
+[Hu_Moments]
+power -3 -6 
+Grip_Above 0.67 0.9 0.04 0.2 
+Grip_Side 1 1.49 0.05 0.8 
+Pointing 0.8 1.2 0.1 0.8 
+
+# Parameters that control hand detection using skin colour
+[Hand_colour]
+Hue 32 61
+Saturation 41 68
+Value 25 68
+Morph open 1 2

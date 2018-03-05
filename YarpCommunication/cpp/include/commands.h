@@ -220,6 +220,31 @@ namespace UpperLimb
 		TRAJECTORY_ASYNC_FINISHED	= (UPPERLIMB_COMMAND + 10),
 		CONFIGURE_LIMBS				= (UPPERLIMB_COMMAND + 12),
 		GET_POSTURE					= (UPPERLIMB_COMMAND + 14),
+		GRASP_OBJECT				= (UPPERLIMB_COMMAND + 16),
+		RELEASE_OBJECT				= (UPPERLIMB_COMMAND + 18),
+		WAIT_EVENT					= (UPPERLIMB_COMMAND + 20),
+		WAIT_EVENT_ASYNC			= (UPPERLIMB_COMMAND + 22),
+		WAIT_EVENT_SIGNALED			= (UPPERLIMB_COMMAND + 24),
+	};
+
+	enum Events
+	{
+		RobotHandNoObject = 1,
+		AttachedBottleNoCap,
+	};
+
+	enum EventTimeout
+	{
+		None = 0,
+		Infinit = -1
+	};
+
+	enum EventResult
+	{
+		Failure = 0,
+		Timeout,
+		NonSignaled,
+		Signaled
 	};
 }
 

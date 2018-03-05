@@ -1,0 +1,57 @@
+Notice: The class ArosArm contains codes, including the Differential kinematics and Virtual Elastic System
+ArmThread contains the definition of tasks
+In the dialog PHRI, there are two main function needs to notice: 
++When the button Execute is pressed, the thread ArmThread will be called to execute the respective task
++When the vision is connected, the function UpdateVision will reun by timer to update new coordinate of object such as obstacle, green target and/or green handle
+
+//--------------Tracking and grasping
+1)Start the arm at a confortable position, for instance: 
+	Go to (Use Roll Pitch Yaw description):
+	Xe: 900    	Yaw: 0
+	Ye: -500	Pitch:0
+	Ze: -200	Roll: 0
+2) Connect to module : 
+Hand
+Vision
+3)Select the respective task and press "Execute" button.
+4) The robot will begin to track the green target when it sees the object.
+//--------------Draw ellipse
+1)Start the arm at a confortable position which give the desired ellipse in the workspace, for instance: 
+	Go to (Use Roll Pitch Yaw description):
+	Xe: 800    	Yaw: 0
+	Ye: -500	Pitch:0
+	Ze: -200	Roll: -90
+2) Connect to module : 
+Vision (Optional)
+3)Select the respective task and press "Execute" button.
+
+//--------------Interaction
+1)Start the arm at a confortable position, for instance: 
+	Go to (Use Roll Pitch Yaw description):
+	Xe: 800    	Yaw: 0
+	Ye: -500	Pitch:0
+	Ze: -200	Roll: -90
+2) Connect to module : 
+Hand
+Speech (Optional)
+Vision (Optional)
+3)Select the respective task and press "Execute" button.
+4)Give the robot an object to grasp and move the robotic hand as you wish
+
+//--------------Take me around
+1)Start the arm at the home position or a confortable position, for instance: 
+	Go to (Use Roll Pitch Yaw description):
+	Xe: 900    	Yaw:0
+	Ye:-500		Pitch:0
+	Ze:200		Roll: -90
+2) Connect to module : 
+Mobile Platform (Must) 
+Laser (Optional. if want to avoid ground obstacle. If not connect, the robot will not avoid)
+Speech (Optional)
+Vision (Optional)
+Hand(Optional)
+3)Select the respective task and press "Execute" button.
+4)Now the robot can be taken to go around.
+
+//--------------Transportation task
+Like the task "Take me around", take him to the object and lower the hand so that the robot knows that he reaches to the target object.

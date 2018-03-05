@@ -18,8 +18,7 @@ endif()
 
 #-------------------------------------------------------------------------------
 
-#Configure_Package_List( YARP Utilities )
-Configure_Package( Utilities )
+Configure_Package_List( YARP Utilities )
 
 Configure_Dependent_Library( FilesDirs ${LIBRARIES_DIR}/FilesDirs )
 

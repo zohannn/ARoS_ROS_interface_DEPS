@@ -21,7 +21,7 @@ endif()
 project( FilesDirs )
 
 Setup_Library_Standard_Config(
-	#YARP
+	YARP
 	MutexWrapper
 	Utilities
 	)

@@ -1,0 +1,19 @@
+# Display or not the different images
+[Images]
+Movement: 0
+Spatial_Segmentation: 0
+
+# Control information printed on the displayed image
+[Visual_Feedback]
+Hand_Movement: 0
+Body_Movement: 0
+
+# X, Y and Z define the boundaries that comprise the region where the user is (in mm)
+[Spatial_segmentation_limits]
+X: 1300 1700
+Y: -2000 2000
+Z: 0 2000
+
+[Movement_limits]
+Body: 0.1 0.3 0.5
+Hands: 0.05 0.2 0.4

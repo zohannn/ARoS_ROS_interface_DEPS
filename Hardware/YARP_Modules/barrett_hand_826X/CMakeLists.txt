@@ -3,15 +3,33 @@ cmake_policy( VERSION ${CMAKE_VERSION} )
 
 project( barrett_hand_826X )
 
+set( MODULES_DIR $ENV{MAINPROJECT}/Hardware/YARP_Modules )
+
+#--------------------------------------------------------------------------------------------
+# YARP
 set(YARP_DIR $ENV{YARP_ROOT}/cmake CACHE PATH "Where is your ${ARGV0} directory?")
 find_package(YARP REQUIRED)
 include_directories(${YARP_INCLUDE_DIRS})
 link_directories(${YARP_LIBRARIES_DIRS})
 
+
+#--------------------------------------------------------------------------------------------
+# Boost and Serial ASIO
+
+# add_definitions( -DUSE_BOOST_SERIAL_ASIO )
+# add_subdirectory(serial_asio)
+# include_directories(${serial_asio_INCLUDE_DIRS})
+# link_directories(${serial_asio_LIBRARIES_DIRS})
+
+find_package( Boost REQUIRED )
+
+include_directories( 
+	${Boost_INCLUDE_DIRS}
+	${MODULES_DIR}/serial_asio )
+
+link_directories( ${Boost_LIBRARY_DIRS} )
+
 add_definitions( -DUSE_BOOST_SERIAL_ASIO )
-add_subdirectory(serial_asio)
-include_directories(${serial_asio_INCLUDE_DIRS})
-link_directories(${serial_asio_LIBRARIES_DIRS})
 
 #--------------------------------------------------------------------------------------------
 #project source and include files
@@ -47,7 +65,7 @@ set(${PROJECT_NAME}_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}
     CACHE INTERNAL "${PROJECT_NAME}: Include Directories" FORCE)
 	
 set(${PROJECT_NAME}_LIBRARY_DIRS 
-							#	${PROJECT_SOURCE_DIR}/lib
-								 ${YARP_LIBRARIES_DIRS}
+							  	${PROJECT_SOURCE_DIR}
+								${YARP_LIBRARIES_DIRS}
     CACHE INTERNAL "${PROJECT_NAME}: Libraries Directories" FORCE)
 

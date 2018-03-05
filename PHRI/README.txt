@@ -1,0 +1,1 @@
+When you cmake your program set CHARACTER SET = ANSI

@@ -1,0 +1,50 @@
+#Segmentation parameters
+
+[Red]
+Hue 360 0
+Saturation 0 100
+Value 0 100
+Morph open 0 0
+
+[Green]
+Hue 114 130
+Saturation 90 100
+Value 50 71
+Morph open 2 4
+
+[Blue]
+Hue 220 224
+Saturation 93 99
+Value 93 100
+Morph close 1 3
+
+[Cyan]
+Hue 176 210
+Saturation 72 100
+Value 72 100
+Morph open 1 1
+
+[Magenta]
+Hue 0 28
+Saturation 97 100
+Value 61 88
+Morph open 6 8
+
+[Yellow]
+Hue 44 52
+Saturation 97 100
+Value 93 100
+Morph open 9 9
+
+[White]
+Hue 360 0
+Saturation 0 100
+Value 0 100
+Morph open 0 0
+
+[Black]
+Hue 0 0
+Saturation 0 0
+Value 0 0
+Morph open 0 0
+
