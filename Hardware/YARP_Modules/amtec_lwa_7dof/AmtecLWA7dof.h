@@ -206,12 +206,40 @@ public:
 
 	// returns velocity of Joint 'nJoint' in pointer 'fPos'
 	bool getVel( int nJoint, float * fVel );
+
+	// returns velocity of all the joints in pointer 'fVel'
+	bool getVelAll( float * fVel );
 	
 	// returns Minimun limit of joint 'nJoint'
 	bool getMinLimit( int nJoint, float * fPos );
 	
 	// returns Maximun limit of joint 'nJoint'
 	bool getMaxLimit( int nJoint, float * fPos );
+
+	// set Minimun limit of joint 'nJoint'
+	bool setMinLimit( int nJoint, float fPos );
+
+	// set Maximum limit of joint 'nJoint'
+	bool setMaxLimit( int nJoint, float fPos );
+
+	
+	// returns Maximun velocity limit of joint 'nJoint' [deg/sec]
+	bool getMaxVelLimit( int nJoint, float * fVel );
+
+	// returns Default Maximun velocity limit of joint 'nJoint' [deg/sec]
+	bool getMaxDefVelLimit( int nJoint, float * fVel );
+
+	// set Maximum velocity limit of joint 'nJoint' [deg/sec]
+	bool setMaxVelLimit( int nJoint, float fVel );
+
+	// returns Maximun acceleration limit of joint 'nJoint' [deg/sec²]
+	bool getMaxAccLimit( int nJoint, float * fAcc );
+
+	// returns Default Maximun acceleration limit of joint 'nJoint' [deg/sec²]
+	bool getMaxDefAccLimit( int nJoint, float * fAcc );
+
+	// set Maximum acceleration limit of joint 'nJoint' [deg/sec²]
+	bool setMaxAccLimit( int nJoint, float fAcc );
 	
 	// returns number of joints
 	int getNumberOfJoints( void );

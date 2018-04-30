@@ -49,6 +49,7 @@ set( EXTERNAL_PACKAGES
 	ImageIO
 	ImageUtils
 	MovementAnalysis
+	StereoVidere
 )
 
 Configure_Package_List( ${EXTERNAL_PACKAGES} )

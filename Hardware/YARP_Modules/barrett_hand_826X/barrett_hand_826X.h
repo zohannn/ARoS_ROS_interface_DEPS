@@ -77,11 +77,51 @@ protected:
 
 	bool Parse_int_from_command_reply( std::string reply, std::string command, int * val, int conv=1 );
 	bool Parse_double_from_command_reply( std::string reply, std::string command, double * val, double conv=1.0 );
+	
+	void yarp::dev::BarrettHand826X::serial_write_handler(const boost::system::error_code& ec,
+														std::size_t bytes_transferred);
 
 public:
+	boost::asio::io_service ioService; // service to handle the asynchronous readings
 	bool Write_Command_Read_Reply_Clean( std::string command, std::string &sReply, int timeout_ms=10000 );
 
 public:
+
+	// Real Time (RT) mode functions
+	bool rt_mode_on;
+	
+	/** start the RT mode of the barrett hand 
+	* @return true/false on success/failure
+	*/
+	bool startRTmode();
+	
+	/** stop the RT mode of the barrett hand 
+	* @return true/false on success/failure
+	*/
+	bool stopRTmode();
+
+	/** get the current velocities of the barrett hand 
+	* @param  vel [1,2,3], spread
+	* @return true/false on success/failure
+	*/
+	bool getRTVelocities(double *vel);
+
+	/** get the current positions of the barrett hand 
+	* @param  pos [1,2,3], spread
+	* @return true/false on success/failure
+	*/
+	bool getRTPositions(double *pos);
+
+	/** set the current velocities of the barrett hand 
+	* @param  vel [1,2,3], spread
+	* @return true/false on success/failure
+	*/
+	bool setRTVelocities(const std::vector<double>& vel);
+
+	int getGainVelocity(double vel);
+
+
+	// Supervisory mode functions
 
 	/** Initialize all the barrett hand
 	* @return true/false on success/failure

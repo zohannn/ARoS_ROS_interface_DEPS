@@ -462,12 +462,14 @@ bool yarp::dev::AmtecLWA7dof::velocityMove( const double *sp )
 		//if we could not set velocity for one joint, stop all others!
 		if( !success ) stop();
 	}
+	
 	if (use_sync_motion)
 	{
 		mutex_PCube.wait();
 		error_code_ = PCube_startMotionAll(nDevice);
 		mutex_PCube.post();
 	}
+	
 
 	return are_Modules_OK();
 }
@@ -856,6 +858,20 @@ bool yarp::dev::AmtecLWA7dof::getVel( int nJoint, float * fVel )
 	return ( error_code_ >= 0 );
 }
 
+bool yarp::dev::AmtecLWA7dof::getVelAll( float * fVel )
+{
+	bool bSuccess;
+	for( int iJoint = 0; iJoint < Number_of_Joints; iJoint++ )
+	{
+		bSuccess = getVel(iJoint, &fVel[iJoint]);
+		if(!bSuccess) 
+			break;
+	}
+	
+
+	return bSuccess;
+}
+
 bool yarp::dev::AmtecLWA7dof::getMinLimit( int nJoint, float * fPos )
 {
 	mutex_PCube.wait();
@@ -873,6 +889,109 @@ bool yarp::dev::AmtecLWA7dof::getMinLimit( int nJoint, float * fPos )
 	}
 	else
 		return false;
+}
+
+bool yarp::dev::AmtecLWA7dof::getMaxVelLimit( int nJoint, float * fVel )
+{
+	mutex_PCube.wait();
+	error_code_ = PCube_getMaxVel( nDevice, nJoint + 1, fVel );
+	mutex_PCube.post();
+
+	if( error_code_ >= 0 )
+	{
+		*fVel *= RAD_TO_DEG_F;
+
+		return true;
+	}
+	else
+		return false;
+}
+
+bool yarp::dev::AmtecLWA7dof::getMaxDefVelLimit( int nJoint, float * fVel )
+{
+	mutex_PCube.wait();
+	error_code_ = PCube_getDefMaxVel( nDevice, nJoint + 1, fVel );
+	mutex_PCube.post();
+
+	if( error_code_ >= 0 )
+	{
+		*fVel *= RAD_TO_DEG_F;
+
+		return true;
+	}
+	else
+		return false;
+}
+
+bool yarp::dev::AmtecLWA7dof::setMaxVelLimit( int nJoint, float fVel )
+{
+	fVel *= DEG_TO_RAD_F;
+	mutex_PCube.wait();
+	error_code_ = PCube_setMaxVel( nDevice, nJoint + 1, fVel );
+	mutex_PCube.post();
+
+	return error_code_ >= 0;
+}
+
+
+bool yarp::dev::AmtecLWA7dof::getMaxAccLimit( int nJoint, float * fAcc )
+{
+	mutex_PCube.wait();
+	error_code_ = PCube_getMaxAcc( nDevice, nJoint + 1, fAcc );
+	mutex_PCube.post();
+
+	if( error_code_ >= 0 )
+	{
+		*fAcc *= RAD_TO_DEG_F;
+
+		return true;
+	}
+	else
+		return false;
+}
+
+bool yarp::dev::AmtecLWA7dof::getMaxDefAccLimit( int nJoint, float * fAcc )
+{
+	mutex_PCube.wait();
+	error_code_ = PCube_getDefMaxAcc( nDevice, nJoint + 1, fAcc );
+	mutex_PCube.post();
+
+	if( error_code_ >= 0 )
+	{
+		*fAcc *= RAD_TO_DEG_F;
+
+		return true;
+	}
+	else
+		return false;
+}
+
+bool yarp::dev::AmtecLWA7dof::setMaxAccLimit( int nJoint, float fAcc )
+{
+	fAcc *= DEG_TO_RAD_F;
+	mutex_PCube.wait();
+	error_code_ = PCube_setMaxAcc( nDevice, nJoint + 1, fAcc );
+	mutex_PCube.post();
+
+	return error_code_ >= 0;
+}
+
+bool yarp::dev::AmtecLWA7dof::setMinLimit( int nJoint, float fPos )
+{
+	mutex_PCube.wait();
+	error_code_ = PCube_setMinPos( nDevice, nJoint + 1, fPos );
+	mutex_PCube.post();
+
+	return error_code_ >= 0;
+}
+
+bool yarp::dev::AmtecLWA7dof::setMaxLimit( int nJoint, float fPos )
+{
+	mutex_PCube.wait();
+	error_code_ = PCube_setMaxPos( nDevice, nJoint + 1, fPos );
+	mutex_PCube.post();
+
+	return error_code_ >= 0;
 }
 	
 bool yarp::dev::AmtecLWA7dof::getMaxLimit( int nJoint, float * fPos )

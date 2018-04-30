@@ -58,6 +58,7 @@ public:
 	/// <summary>Vector of float parameters.</summary>
 	std::vector<float> fData;
 
+
 	/// <summary>Error code, if exists.</summary>
 	int iErrorCode;
 

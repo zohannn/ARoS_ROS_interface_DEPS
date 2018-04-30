@@ -27,8 +27,9 @@
 
 #include <ace\OS.h>
 
-#include "AmtecPStepServer.h"
-#include "UpperLimbReqProcessor.h"
+#include "YarpCommunicationServerUpperLimb.h"
+
+//#include "UpperLimbReqProcessor.h"
 
 
 
@@ -41,12 +42,19 @@
 #endif
 
 //------------------------------------------------------------------------------
-
-const std::string default_device_name = "/aros/upperlimb";
-const std::string default_config_file = "upperlimb.ini";
-
+// default settings
+//RIGHT
+const std::string default_device_name = "/aros/upperlimb_right";
+const std::string default_config_file = "upperlimb_right.ini";
+// LEFT
+//const std::string default_device_name = "/aros/upperlimb_left";
+//const std::string default_config_file = "upperlimb_left.ini";
 const bool default_enable_arm = true;
 const bool default_enable_hand = true;
+const bool default_init_hand = false; // true to initialize the hand upon startup
+
+//Joint states sender
+std::string joints_sender_name;
 
 //------------------------------------------------------------------------------
 bool end_execution = false;
@@ -74,8 +82,10 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
 	return 1;
 }
 
-void ArmRestPosition(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm)
+// Go to rest position from home
+void ArmRestPosition(CYarpCommunicationServerUpperLimb* upperlimb_server)
 {
+	boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm = upperlimb_server->getArmDevice();
 	//---------------------------------------------------------------------
 	// Perform safety check. If an error is present abort maintenance.
 
@@ -100,8 +110,11 @@ void ArmRestPosition(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm)
 		throw std::exception(arm->Get_Error_Str().data(), 10);
 }
 
-void ArmGoHome(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm)
+// Go Home from rest position
+void ArmGoHome(CYarpCommunicationServerUpperLimb* upperlimb_server)
 {
+
+	boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm = upperlimb_server->getArmDevice();
 	//---------------------------------------------------------------------
 	// Perform safety check. If an error is present abort maintenance.
 
@@ -155,9 +168,11 @@ void Print_Error_Options(void)
 }
 
 
-int ErrorRecovery(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm, UpperLimbReqProcessor &upperlimbproc)
+int ErrorRecovery(CYarpCommunicationServerUpperLimb* upperlimb_server)
 {
 	bool finished = false;
+
+	boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm = upperlimb_server->getArmDevice();
 
 	boost::function<std::pair<int,int>(unsigned int, std::string &)> parse_joints_nr = [arm](unsigned int off, std::string &cmd) 
 		-> std::pair<int, int>
@@ -256,7 +271,7 @@ int ErrorRecovery(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm, UpperLimbReqPr
 				throw std::string("The command is not yet implemented.");
 			}
 			else if (cmd == "reset executor")
-				upperlimbproc.ResetExecutor();
+				upperlimb_server->ResetExecutor();
 			else if (cmd == "help")
 				Print_Error_Options();
 			else if (cmd == "return")
@@ -297,7 +312,8 @@ void Print_Options(void)
 		"--------------------------------------------------------------------------------" << std::endl << std::endl;
 }
 
-int WaitUserInput(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm, boost::shared_ptr<yarp::dev::BarrettHand826X> hand)
+//int WaitUserInput(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm, boost::shared_ptr<yarp::dev::BarrettHand826X> hand)
+int WaitUserInput(CYarpCommunicationServerUpperLimb* upperlimb_server)
 {
 	int nJoints;
 	
@@ -309,6 +325,9 @@ int WaitUserInput(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm, boost::shared_
 
 	// Get the pressed key.
 	key = _getch();
+
+	boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm = upperlimb_server->getArmDevice();
+	boost::shared_ptr<yarp::dev::BarrettHand826X>  hand = upperlimb_server->getHandDevice();
 		
 	//----------------------------------------------------------------------
 	// Handle key presses
@@ -322,7 +341,7 @@ int WaitUserInput(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm, boost::shared_
 			{
 				std::cout << "Take arm to home position from rest... ";
 				std::cout.flush();
-				ArmGoHome(arm);
+				ArmGoHome(upperlimb_server);
 				std::cout << "Done." << std::endl;
 			}
 			else
@@ -335,7 +354,7 @@ int WaitUserInput(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm, boost::shared_
 			{
 				std::cout << "Take arm to rest position from home... ";
 				std::cout.flush();
-				ArmRestPosition(arm);
+				ArmRestPosition(upperlimb_server);
 				std::cout << "Done." << std::endl;
 			}
 			else
@@ -365,12 +384,21 @@ int WaitUserInput(boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm, boost::shared_
 		case 'i':
 			if (hand)
 			{
-				std::cout << "Initializing hand... ";
-				std::cout.flush();
+				std::cout << "Initializing hand... "; std::cout.flush();
+				upperlimb_server->stop_joints_states_sender();
+				hand->stopRTmode();
+				boost::this_thread::sleep_for(boost::chrono::milliseconds(500));				
 				if (hand->Initialize())
 					std::cout << "OK." << std::endl;
 				else
 					std::cout << "Failed!" << std::endl;
+
+				boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
+				if (!upperlimb_server->start_joints_states_sender(joints_sender_name))
+				{
+					std::cout << "Error: Could not open port with name '" << joints_sender_name << "'."<< std::endl;
+					return 8;
+				}
 			}
 			else
 				std::cout << "Hand is disabled." << std::endl;
@@ -422,8 +450,8 @@ int main( int argc, char* argv[] )
 	string maintenance_file;
 	yarp::os::Property prop;
 
-	std::cout << std::endl << std::endl <<
-		"------------------------ UpperLimb Wrapper  -----------------------" << std::endl << std::endl;
+	std::cout << std::endl << std::endl << 
+		"------------------------ UpperLimb YARP Server -----------------------" << std::endl << std::endl;
 
 	try
 	{
@@ -445,7 +473,7 @@ int main( int argc, char* argv[] )
 			("Arm.enable", po::value<bool>(&enable_arm)->default_value(default_enable_arm), "set if arm device should be enabled")
 			("Hand.config", po::value<string>(&hand_config_file), "set arm device configuration file name")
 			("Hand.enable", po::value<bool>(&enable_hand)->default_value(default_enable_hand), "set if hand device should be enabled")
-			("Hand.init", po::value<bool>(&init_hand)->default_value(false), "set if hand device should be initialized upon startup")
+			("Hand.init", po::value<bool>(&init_hand)->default_value(default_init_hand), "set if hand device should be initialized upon startup")
 			;
 
 		po::options_description arm_device_options("Arm options");
@@ -506,38 +534,6 @@ int main( int argc, char* argv[] )
 		return 2;
 	}
 
-	bool success;
-	yarp::os::Property arm_prop, hand_prop;
-
-	if (enable_arm)
-	{
-		std::cout << "Loading arm config file... " << std::flush;
-		//check configuration files for arm and hand
-		success = arm_prop.fromConfigFile(arm_config_file);
-		if (!success)
-		{
-			std::cout << "Error: Could not read from " << arm_config_file << std::endl;
-			return 3;
-		}
-		std::cout << "OK." << std::endl;
-	}
-	else
-		std::cout << "Arm module is disabled." << std::endl;
-
-	if (enable_hand)
-	{
-		std::cout << "Loading hand config file... " << std::flush;
-		success = hand_prop.fromConfigFile(hand_config_file);
-		if (!success)
-		{
-			std::cout << "Error: Could not read from " << hand_config_file << std::endl;
-			return 3;
-		}
-		std::cout << "OK." << std::endl;
-	}
-	else
-		std::cout << "Hand module is disabled." << std::endl;
-
 	std::cout << "Setting process priority... " << std::flush;
 	//Set this process as high priority to have better accuracy in sleep_for
 	BOOL setHighprio = SetPriorityClass(GetCurrentProcess(), HIGH_PRIORITY_CLASS);
@@ -550,76 +546,54 @@ int main( int argc, char* argv[] )
 
 	//Create instance of yarp network for handling initialization/final procedures.
 	yarp::os::Network yarp_net;
-	CAmtecPStepServer PStepServer;
 
-	if (enable_arm)
+	CYarpCommunicationServerUpperLimb upperlimb_server(net_name,arm_config_file,hand_config_file,enable_arm,enable_hand,init_hand);
+	bool condition = upperlimb_server.open();
+	if( !condition )
 	{
-		//PStepserver instance
-		std::cout << "Initializing PStepServer instance... " << std::flush;
-		if (!PStepServer.Initialize())
-			return 4;
-		std::cout << "OK." << std::endl;
+		std::cerr << std::endl << "Error Initializing the Upper Limb server" << std::endl;
+		upperlimb_server.close();
+		yarp_net.fini();
+		return -1;
 	}
 
-	//upper limb devices
-	boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm;
-	boost::shared_ptr<yarp::dev::BarrettHand826X> hand;
-	if (enable_arm)
-		arm = boost::make_shared<yarp::dev::AmtecLWA7dof>();
-	if (enable_hand)
-		hand = boost::make_shared<yarp::dev::BarrettHand826X>();
-
-	//open devices
-	if (enable_arm)
+	//start joints publisher
+	joints_sender_name = net_name + "/joint_states";
+	std::cout << "Opening yarp communication channel for joints states ... " << std::flush;
+	if (!upperlimb_server.start_joints_states_sender(joints_sender_name))
 	{
-		//arm must have sync_motion enabled
-		arm_prop.unput("use_sync_motion");
-		arm_prop.put("use_sync_motion", yarp::os::Value::makeValue("true"));
-
-		std::cout << "Opening arm device... " << std::flush;
-		success = arm->open(arm_prop);
-		if (!success)
-		{
-			std::cout << "Error: Could not open ARM device: " << arm->Get_Error_Str() << std::endl;
-			return 5;
-		}
-		std::cout << "OK." << std::endl;
+		std::cout << "Error: Could not open port with name '" << joints_sender_name << "'."<< std::endl;
+		return 8;
 	}
-	if (enable_hand)
-	{
-		//overwrite config file option of initialization of hand
-		hand_prop.unput("initialize");
-		hand_prop.put("initialize", yarp::os::Value::makeInt(init_hand? 1 : 0));
+	std::cout << "OK." << std::endl;
 
-		std::cout << "Opening hand device... " << std::flush;
-		success = hand->open(hand_prop);
-		if (!success)
-		{
-			std::cout << "Error: Could not open HAND device." << std::endl;
-			return 6;
-		}
-		std::cout << "OK." << std::endl;
-	}
-	
-	//check whether user requested arm go home or restposition
-	if (enable_arm)
+	//------------------------------------------------------------------------------------------------------
+	// Perform arm maintenance if it is necessary
+	if(enable_arm)
 	{
 		try
 		{
-			if (arm_gohome)
+			//if( bMaintenance )
+			//{
+			//	ArmMaintenance( &comm_manager, sArm_Config );
+
+			//	return 0; // Maintenance done! Exit program.
+			//	end_execution = true;
+			//}
+
+			if( arm_gohome )
 			{
-				std::cout << "Take arm to home position from rest... ";
-				std::cout.flush();		
-				ArmGoHome(arm);
+				std::cout << "Take arm to home position from rest... ";	std::cout.flush();	
+				ArmGoHome( &upperlimb_server );
 				std::cout << "Done." << std::endl;
 			}
-			else if (arm_restposition)
+
+			if( arm_restposition )
 			{
-				std::cout << "Take arm to rest position from home... ";
-				std::cout.flush();
-				ArmRestPosition(arm);
+				std::cout << "Take arm to rest position from home... "; std::cout.flush();
+				ArmRestPosition(&upperlimb_server );
 				std::cout << "Done." << std::endl;
-				return 0;
+				return 0; // Go to Rest Done! Exit the Program
 			}
 		}
 		catch (std::exception const&ex)
@@ -628,67 +602,35 @@ int main( int argc, char* argv[] )
 			return 9;
 		}
 	}
-
-	UpperLimbReqProcessor upperlimbproc;
-
-	YarpConnector limb_req_channel("Upper Limb requests", net_name, "", CYarpCommBase::Server);
-	upperlimbproc.SetDevices(arm, hand);
-	limb_req_channel.SetReceiveHandler(boost::bind(&UpperLimbReqProcessor::ProcessReq, &upperlimbproc, _1, _2, boost::ref(limb_req_channel)));
-
-	std::cout << "Opening yarp communication channel... " << std::flush;
-	success = limb_req_channel.open();
-	if (!success)
-	{
-		std::cout << "Error: Could not open Communications channel: " << limb_req_channel.get_ErrorString() << std::endl;
-		return 7;
-	}
-	std::cout << "OK." << std::endl;
-
-	//start joints publisher
-	const std::string joints_name = "/aros/upperlimb_right/joint_states";
-	std::cout << "Opening yarp communication channel for joints states publisher... " << std::flush;
-	success = upperlimbproc.start_joints_states_sender(joints_name);
-	if (!success)
-	{
-		std::cout << "Error: Could not open port with name '" << joints_name << "'."<< std::endl;
-		return 8;
-	}
-	std::cout << "OK." << std::endl;
-
-	//boost::unique_future<void> fut = boost::async(boost::launch::async, boost::bind(WaitUserInput, arm, hand));
-
-	//{
-	//	boost::unique_lock<boost::mutex> lck(wait_end_mtx);
-	//	wait_end_cv.wait(lck, [](){ return end_execution; });
-	//}
-
-
+	
+	//--------------------------------------------------------------------------
+	
 	Print_Options();
 
 	int ret = 0;
 	do
 	{
-		bool do_recovery = upperlimbproc.GetExecutorState() == UpperLimbReqProcessor::ExecutorState::Error;
+		bool do_recovery = upperlimb_server.GetExecutorState() == CYarpCommunicationServerUpperLimb::ExecutorState::Error;
 		//do_recovery = true;
 		//check if module is in error state,
 		if (do_recovery)
 		{
 			Print_Error_Options();
-
 			//in that case, show the error recovery options...
-			ErrorRecovery(arm, upperlimbproc);
+			ErrorRecovery(&upperlimb_server);
 		}
 		else
 		{
-			ret = WaitUserInput(arm, hand);
+			ret = WaitUserInput(&upperlimb_server);
 		}
 		boost::this_thread::sleep_for(boost::chrono::milliseconds(200));
 	} while (!end_execution && ret == 0);
 
 	std::cout << "Closing process... " << std::flush;
-	upperlimbproc.stop_joints_states_sender();
-	limb_req_channel.close();
-	PStepServer.Terminate();
+	upperlimb_server.stop_joints_states_sender();
+	//boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
+	upperlimb_server.close();
+	yarp_net.fini();
 	//fut.wait();
 	std::cout << "OK." << std::endl;
 

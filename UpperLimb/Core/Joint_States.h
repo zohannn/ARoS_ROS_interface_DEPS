@@ -7,14 +7,17 @@
 class Joint_States : public yarp::os::Portable
 {
 public:
+	/*
 	enum EndEffector
 	{
 		Grasping,
 		Moving,
 		Releasing
 	};
+	*/
 	std::vector<float> position;
-	EndEffector end_effector_state;
+	std::vector<float> velocity;
+	//EndEffector end_effector_state;
 
 	Joint_States();
 
@@ -32,7 +35,8 @@ public:
 		// by swapping the members of two classes,
 		// the two classes are effectively swapped
 		swap(first.position, second.position);
-		swap(first.end_effector_state, second.end_effector_state);
+		swap(first.velocity, second.velocity);
+		//swap(first.end_effector_state, second.end_effector_state);
 	}
 
 	virtual bool write(yarp::os::ConnectionWriter& connection);

@@ -39,6 +39,7 @@ endif()
 set( SRC_DIRS 
 	${CMAKE_CURRENT_SOURCE_DIR} 
 	Core
+	Communications
 	${MODULES_DIR}/amtec_lwa_7dof
 	${MODULES_DIR}/barrett_hand_826X
 	${MODULES_DIR}/serial_asio
@@ -98,7 +99,6 @@ Create_File_Groups(  "${HEADER_FILES}" "${SOURCE_FILES}")
 set( myApp_SRCS
 	${SOURCE_FILES}
 	${HEADER_FILES}
-	#${RESOURCE_FILES}
 )
 
 #--------------------------------------------------------------------------------------------

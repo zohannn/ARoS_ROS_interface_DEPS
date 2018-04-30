@@ -56,6 +56,8 @@ add_library( barrett_hand_826X STATIC ${myApp_SRCS} )
 
 target_link_libraries(barrett_hand_826X  serial_asio ${YARP_LIBRARIES})
 
+target_compile_definitions(barrett_hand_826X PUBLIC BOOST_ASIO_ENABLE_CANCELIO)
+
 # Expose this's public includes (including eigen, tbb and ipp transitively) to other
 # subprojects through cache variable.
 set(${PROJECT_NAME}_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}
