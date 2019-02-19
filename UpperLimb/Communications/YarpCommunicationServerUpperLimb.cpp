@@ -281,6 +281,8 @@ void CYarpCommunicationServerUpperLimb::joint_states_job()
 
 				if(hand->rt_mode_on){modules_ok = hand->getRTPositions(dArray);}
 
+				
+
 				/*
 				float vel_0; arm->getMaxVelLimit(0,&vel_0);
 				float vel_1; arm->getMaxVelLimit(1,&vel_1);
@@ -987,6 +989,7 @@ void CYarpCommunicationServerUpperLimb::TrajectoryMovementsExecutor()
 
 
 			//process each trajectory step
+			std::vector<TrajectoryStep> steps = std::get<0>(mov); 
 			for each(auto &step in std::get<0>(mov))
 			{
 				if (stop_movement)	//stop executing if stop_movement goes to true
@@ -995,9 +998,12 @@ void CYarpCommunicationServerUpperLimb::TrajectoryMovementsExecutor()
 				const std::vector<float> &joints = std::get<0>(step);
 				unsigned time = static_cast<unsigned>(std::get<1>(step)*1000.0f);
 
+
+
+
 				//compute the time point when should the next step be processed
 				start = high_resolution_clock::now();
-				float time_thresshold = 25;
+				float time_thresshold = 25; //25
 				unsigned int uptowake = time <= time_thresshold ? time : time - time_thresshold;
 				wake_up_time = start + boost::chrono::milliseconds(uptowake);
 
