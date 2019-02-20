@@ -1,0 +1,11 @@
+C:/ARoS_ROS_interface_DEPS/PHRI/build/CMakeFiles/PHRI.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/CMakeFiles/ALL_BUILD.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/CMakeFiles/ZERO_CHECK.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare/CMakeFiles/DataShare.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare/CMakeFiles/ALL_BUILD.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix/CMakeFiles/Matrix.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix/CMakeFiles/ALL_BUILD.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities/CMakeFiles/Utilities.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities/CMakeFiles/ALL_BUILD.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication/CMakeFiles/YarpCommunication.dir
+C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication/CMakeFiles/ALL_BUILD.dir

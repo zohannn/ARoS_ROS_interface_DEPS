@@ -53,9 +53,6 @@ const bool default_enable_arm = true;
 const bool default_enable_hand = true;
 const bool default_init_hand = false; // true to initialize the hand upon startup
 
-//Joint states sender
-std::string joints_sender_name;
-
 //------------------------------------------------------------------------------
 bool end_execution = false;
 boost::mutex wait_end_mtx;
@@ -384,21 +381,12 @@ int WaitUserInput(CYarpCommunicationServerUpperLimb* upperlimb_server)
 		case 'i':
 			if (hand)
 			{
-				std::cout << "Initializing hand... "; std::cout.flush();
-				upperlimb_server->stop_joints_states_sender();
-				hand->stopRTmode();
-				boost::this_thread::sleep_for(boost::chrono::milliseconds(500));				
+				std::cout << "Initializing hand... ";
+				std::cout.flush();
 				if (hand->Initialize())
 					std::cout << "OK." << std::endl;
 				else
 					std::cout << "Failed!" << std::endl;
-
-				boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
-				if (!upperlimb_server->start_joints_states_sender(joints_sender_name))
-				{
-					std::cout << "Error: Could not open port with name '" << joints_sender_name << "'."<< std::endl;
-					return 8;
-				}
 			}
 			else
 				std::cout << "Hand is disabled." << std::endl;
@@ -558,11 +546,13 @@ int main( int argc, char* argv[] )
 	}
 
 	//start joints publisher
-	joints_sender_name = net_name + "/joint_states";
+	const std::string joints_name = net_name + "/joint_states";
 	std::cout << "Opening yarp communication channel for joints states ... " << std::flush;
-	if (!upperlimb_server.start_joints_states_sender(joints_sender_name))
+	bool success = true;
+	//bool success = upperlimb_server.start_joints_states_sender(joints_name);
+	if (!success)
 	{
-		std::cout << "Error: Could not open port with name '" << joints_sender_name << "'."<< std::endl;
+		std::cout << "Error: Could not open port with name '" << joints_name << "'."<< std::endl;
 		return 8;
 	}
 	std::cout << "OK." << std::endl;
@@ -627,8 +617,7 @@ int main( int argc, char* argv[] )
 	} while (!end_execution && ret == 0);
 
 	std::cout << "Closing process... " << std::flush;
-	upperlimb_server.stop_joints_states_sender();
-	//boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
+	//upperlimb_server.stop_joints_states_sender();
 	upperlimb_server.close();
 	yarp_net.fini();
 	//fut.wait();

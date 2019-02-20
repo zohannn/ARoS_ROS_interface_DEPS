@@ -79,7 +79,6 @@ std::string CMessage::asString( void )
 		strm_Msg << " fdata" << i << ':' << fData.at( i );
 	}
 
-	
 	return strm_Msg.str();
 }
 
@@ -114,7 +113,6 @@ void CMessage::fromBottle( yarp::os::Bottle &bottleMsg )
 		index++;
 	}
 
-	
 	bin_size = bottleMsg.get( index ).asBlobLength();
 	bin = ( char* ) bottleMsg.get( index ).asBlob();
 }
@@ -146,7 +144,6 @@ void CMessage::toBottle( yarp::os::Bottle &bottleMsg )
 		bottleMsg.add( yarp::os::Value::makeDouble( static_cast<double>( fData.at( i ) ) ) );
 	}
 
-	
 	bottleMsg.add( yarp::os::Value::makeBlob( (void*) bin, static_cast<int>( bin_size ) ) );
 }
 

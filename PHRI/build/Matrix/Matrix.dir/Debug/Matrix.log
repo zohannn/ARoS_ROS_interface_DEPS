@@ -1,0 +1,183 @@
+﻿Compilazione avviata 20/02/2019 14:20:31.
+Progetto "C:\ARoS_ROS_interface_DEPS\PHRI\build\Matrix\Matrix.vcxproj" sul nodo 2 (destinazioni: build).
+PrepareForBuild:
+  Creazione directory "C:\ARoS_ROS_interface_DEPS\PHRI\build\Matrix\Debug\".
+InitializeBuildStatus:
+  Creazione di "Matrix.dir\Debug\Matrix.unsuccessfulbuild". È stato specificato "AlwaysCreate".
+CustomBuild:
+  Building Custom Rule C:/ARoS_ROS_interface_DEPS/Libraries/Matrix/CMakeLists.txt
+  CMake does not need to re-run because C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix/CMakeFiles/generate.stamp is up-to-date.
+ClCompile:
+  C:\Programmi\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\local\ACE_wrappers /IC:\local\YARP\include /IC:\ARoS_ROS_interface_DEPS\Libraries\DataShare /IC:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include /IC:\local\Intel\IPP\6.1.2.041\ia32\include /IC:\ARoS_ROS_interface_DEPS\Libraries\Matrix /IC:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include /IC:\ARoS_ROS_interface_DEPS\Libraries\Matrix\src /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D USE_YARP /D USE_DataShare /D IPP_VERSION_MAJOR=6 /D IPP_VERSION_MINOR=1 /D IPP_VERSION_UPDATE=2 /D USE_IPP /D _CRT_SECURE_NO_WARNINGS /D WINVER=0x0501 /D NTDDI_VERSION=NTDDI_WINXP /D _WIN32_WINNT=0x0501 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Matrix.dir\Debug\\" /Fd"Matrix.dir\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\Libraries\Matrix\src\Matrix.cpp
+  Matrix.cpp
+c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(781): warning C4661: 'bool CMatrix<Type>::Copy_Data(CMatrix<Type> *,int,int)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(122): vedere la dichiarazione di 'CMatrix<Type>::Copy_Data'
+          with
+          [
+              Type=float
+          ]
+c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(781): warning C4661: 'bool CMatrix<Type>::Copy_Data(Type *,int,int)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(115): vedere la dichiarazione di 'CMatrix<Type>::Copy_Data'
+          with
+          [
+              Type=float
+          ]
+c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(781): warning C4661: 'bool CMatrix<Type>::DotMul(CMatrix<Type> *,CMatrix<Type> *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(491): vedere la dichiarazione di 'CMatrix<Type>::DotMul'
+          with
+          [
+              Type=float
+          ]
+c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(781): warning C4661: 'bool CMatrix<Type>::DotMul(CMatrix<Type> *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(483): vedere la dichiarazione di 'CMatrix<Type>::DotMul'
+          with
+          [
+              Type=float
+          ]
+c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(781): warning C4661: 'bool CMatrix<Type>::Heaviside(Type)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(529): vedere la dichiarazione di 'CMatrix<Type>::Heaviside'
+          with
+          [
+              Type=float
+          ]
+c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(781): warning C4661: 'bool CMatrix<Type>::Heaviside(Type,CMatrix<Type> *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(524): vedere la dichiarazione di 'CMatrix<Type>::Heaviside'
+          with
+          [
+              Type=float
+          ]
+c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(781): warning C4661: 'bool CMatrix<Type>::Threshold(Type,Type,Type,Type,CMatrix<Type> *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(539): vedere la dichiarazione di 'CMatrix<Type>::Threshold'
+          with
+          [
+              Type=float
+          ]
+c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(781): warning C4661: 'bool CMatrix<Type>::Sum(int,int,Type *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(560): vedere la dichiarazione di 'CMatrix<Type>::Sum'
+          with
+          [
+              Type=float
+          ]
+..\..\..\Libraries\Matrix\src\Matrix.cpp(76): warning C4661: 'bool CMatrix<Type>::Copy_Data(CMatrix<Type> *,int,int)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(122): vedere la dichiarazione di 'CMatrix<Type>::Copy_Data'
+          with
+          [
+              Type=float
+          ]
+..\..\..\Libraries\Matrix\src\Matrix.cpp(76): warning C4661: 'bool CMatrix<Type>::Copy_Data(Type *,int,int)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(115): vedere la dichiarazione di 'CMatrix<Type>::Copy_Data'
+          with
+          [
+              Type=float
+          ]
+..\..\..\Libraries\Matrix\src\Matrix.cpp(76): warning C4661: 'bool CMatrix<Type>::DotMul(CMatrix<Type> *,CMatrix<Type> *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(491): vedere la dichiarazione di 'CMatrix<Type>::DotMul'
+          with
+          [
+              Type=float
+          ]
+..\..\..\Libraries\Matrix\src\Matrix.cpp(76): warning C4661: 'bool CMatrix<Type>::DotMul(CMatrix<Type> *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(483): vedere la dichiarazione di 'CMatrix<Type>::DotMul'
+          with
+          [
+              Type=float
+          ]
+..\..\..\Libraries\Matrix\src\Matrix.cpp(76): warning C4661: 'bool CMatrix<Type>::Heaviside(Type)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(529): vedere la dichiarazione di 'CMatrix<Type>::Heaviside'
+          with
+          [
+              Type=float
+          ]
+..\..\..\Libraries\Matrix\src\Matrix.cpp(76): warning C4661: 'bool CMatrix<Type>::Heaviside(Type,CMatrix<Type> *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(524): vedere la dichiarazione di 'CMatrix<Type>::Heaviside'
+          with
+          [
+              Type=float
+          ]
+..\..\..\Libraries\Matrix\src\Matrix.cpp(76): warning C4661: 'bool CMatrix<Type>::Threshold(Type,Type,Type,Type,CMatrix<Type> *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(539): vedere la dichiarazione di 'CMatrix<Type>::Threshold'
+          with
+          [
+              Type=float
+          ]
+..\..\..\Libraries\Matrix\src\Matrix.cpp(76): warning C4661: 'bool CMatrix<Type>::Sum(int,int,Type *)': nessuna definizione adatta fornita per la richiesta di creazione esplicita di un'istanza del modello
+          with
+          [
+              Type=float
+          ]
+          c:\aros_ros_interface_deps\libraries\matrix\include\Matrix.h(560): vedere la dichiarazione di 'CMatrix<Type>::Sum'
+          with
+          [
+              Type=float
+          ]
+Lib:
+  C:\Programmi\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\ARoS_ROS_interface_DEPS\PHRI\build\Matrix\Debug\Matrix.lib" /NOLOGO Matrix.dir\Debug\Matrix.obj  /machine:X86
+  Matrix.vcxproj -> C:\ARoS_ROS_interface_DEPS\PHRI\build\Matrix\Debug\Matrix.lib
+FinalizeBuildStatus:
+  Eliminazione del file "Matrix.dir\Debug\Matrix.unsuccessfulbuild" in corso.
+  Aggiornamento timestamp di "Matrix.dir\Debug\Matrix.lastbuildstate".
+Compilazione progetto "C:\ARoS_ROS_interface_DEPS\PHRI\build\Matrix\Matrix.vcxproj" (destinazioni: build) completata.
+
+Compilazione completata.
+
+Tempo trascorso 00:00:00.94

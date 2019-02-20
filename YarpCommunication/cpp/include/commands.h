@@ -164,6 +164,7 @@ enum Amtec_Command {
 	AMTEC_STOP_CLEAR_TRAJECTORY		= (AMTEC_COMMAND + 70),
 	AMTEC_WAIT_TRAJECTORY_END_ASYNC = (AMTEC_COMMAND + 72),
 	AMTEC_TRAJECTORY_ASYNC_FINISHED = (AMTEC_COMMAND + 74),
+
 };
 
 
@@ -172,6 +173,44 @@ enum Amtec_Command {
 
 #define TWOAMTEC_COMMAND	9400
 enum TwoAmtec_Command {
+	TWOAMTEC_TERMINATE					= (AMTEC_COMMAND + 2),	
+	TWOAMTEC_HOME						= (AMTEC_COMMAND + 4),	//Perform a home to joints by a specific order
+	TWOAMTEC_HOME_JOINT					= (AMTEC_COMMAND + 6),	//Performe a home to a specific joint
+	TWOAMTEC_RESET_JOINT				= (AMTEC_COMMAND + 8),
+	TWOAMTEC_RESET_ALL					= (AMTEC_COMMAND + 10),
+	TWOAMTEC_STOP_JOINT					= (AMTEC_COMMAND + 12),
+	TWOAMTEC_STOP_ALL					= (AMTEC_COMMAND + 14),
+	TWOAMTEC_MOVE_STEP					= (AMTEC_COMMAND + 16),	//Move specific joint(Does not wait for motion end)
+	TWOAMTEC_MOVE_STEP_ALL				= (AMTEC_COMMAND + 18), 
+	TWOAMTEC_MOVE_ALL_VEL				= (AMTEC_COMMAND + 20),
+	TWOAMTEC_MOVE_ALL_VEL_TRAJ			= (AMTEC_COMMAND + 22),
+	TWOAMTEC_GET_POS					= (AMTEC_COMMAND + 24),
+	TWOAMTEC_GET_POS_ALL				= (AMTEC_COMMAND + 26),
+	TWOAMTEC_MOVE_STEP_ALL_SAME_TIME	= (AMTEC_COMMAND + 28),
+	TWOAMTEC_OPENGRIPPER				= (AMTEC_COMMAND + 30),
+	TWOAMTEC_CLOSEGRIPPER				= (AMTEC_COMMAND + 32),
+	TWOAMTEC_GET_FORCE_TORQUE			= (AMTEC_COMMAND + 34),
+	TWOAMTEC_RESTART_MODULE				= (AMTEC_COMMAND + 36),
+	TWOAMTEC_MOVE_VEL_JOINT				= (AMTEC_COMMAND + 38),	//Move a specific joint at a desired speed(rad/s)(joint number must be stored in uParam[0], velocity in fData[0]
+	TWOAMTEC_MOVE_VEL					= (AMTEC_COMMAND + 40),	//Move all joints at specified speeds(rad/s)( velocities in fData, must have at least Number_of_Joints velocities
+	TWOAMTEC_HOME_ALL					= (AMTEC_COMMAND + 42),	//Perform a home to joints by a specific order
+	TWOAMTEC_GET_POS_DEG				= (AMTEC_COMMAND + 44),
+	TWOAMTEC_GET_POS_DEG_ALL			= (AMTEC_COMMAND + 46),
+	TWOAMTEC_MOVE_STEP_WAIT				= (AMTEC_COMMAND + 48), //Move specific joint( wait for motion end)
+	TWOAMTEC_FREE_JOINT					= (AMTEC_COMMAND + 50), //Free specified joint(release break)
+	TWOAMTEC_GET_GRIPPER				= (AMTEC_COMMAND + 52), //get gripper position
+	TWOAMTEC_HOME_GRIPPER				= (AMTEC_COMMAND + 54),	//performe a home command to gripper
+	TWOAMTEC_INV_KIN					= (AMTEC_COMMAND + 56),
+	TWOAMTEC_SOFT_STOP					= (AMTEC_COMMAND + 58),	//Performe a software stop to arm joints
+	TWOAMTEC_MOVE_STEP_SAME_TIME_WAIT	= (AMTEC_COMMAND + 60), //Move all joints and wait for motion end
+	TWOAMTEC_WAIT_MOTION_END			= (AMTEC_COMMAND + 62), //wait for motion end
+	TWOAMTEC_MOVE_STEP_SAME_TIME_SEL	= (AMTEC_COMMAND + 64), //Move the specified joints to a position during the same time.
+	TWOAMTEC_MOVE_STEP_TRAJECTORY		= (AMTEC_COMMAND + 66),
+	TWOAMTEC_WAIT_TRAJECTORY_END		= (AMTEC_COMMAND + 68),
+	TWOAMTEC_STOP_CLEAR_TRAJECTORY		= (AMTEC_COMMAND + 70),
+	TWOAMTEC_WAIT_TRAJECTORY_END_ASYNC	= (AMTEC_COMMAND + 72),
+	TWOAMTEC_TRAJECTORY_ASYNC_FINISHED	= (AMTEC_COMMAND + 74),
+	/*
 	TWOAMTEC_HOME							= (TWOAMTEC_COMMAND + 2),	//Perform a home to joints by a specific order
 	TWOAMTEC_HOME_JOINT						= (TWOAMTEC_COMMAND + 4),	//Performe a home to a specific joint
 	TWOAMTEC_HOME_ALL						= (TWOAMTEC_COMMAND + 6),	//Perform a home to joints by a specific order
@@ -207,6 +246,7 @@ enum TwoAmtec_Command {
 	TWOAMTEC_STOP_CLEAR_TRAJECTORY			= (TWOAMTEC_COMMAND + 66),
 	TWOAMTEC_WAIT_TRAJECTORY_END_ASYNC		= (TWOAMTEC_COMMAND + 68),
 	TWOAMTEC_TRAJECTORY_ASYNC_FINISHED		= (TWOAMTEC_COMMAND + 70),
+	*/
 };
 
 namespace UpperLimb
@@ -254,7 +294,56 @@ namespace UpperLimb
 		NonSignaled,
 		Signaled
 	};
+
 }
+
+namespace DualUpperLimb
+{
+#define DUAL_UPPERLIMB_COMMAND	20000
+	enum Dual_UpperLimb_Command {
+		ADD_TRAJECTORY				= (DUAL_UPPERLIMB_COMMAND + 2),
+		WAIT_TRAJECTORY_END			= (DUAL_UPPERLIMB_COMMAND + 4),
+		STOP_CLEAR_TRAJECTORY		= (DUAL_UPPERLIMB_COMMAND + 6),
+		WAIT_TRAJECTORY_END_ASYNC	= (DUAL_UPPERLIMB_COMMAND + 8),
+		TRAJECTORY_ASYNC_FINISHED	= (DUAL_UPPERLIMB_COMMAND + 10),
+		CONFIGURE_LIMBS				= (DUAL_UPPERLIMB_COMMAND + 12),
+		//GET_POSTURE					= (DUAL_UPPERLIMB_COMMAND + 14),
+		GET_POSITIONS				= (DUAL_UPPERLIMB_COMMAND + 14),
+		GET_VELOCITIES				= (DUAL_UPPERLIMB_COMMAND + 16),
+		SET_POSITIONS				= (DUAL_UPPERLIMB_COMMAND + 18),
+		SET_VELOCITIES				= (DUAL_UPPERLIMB_COMMAND + 20),
+		GRASP_OBJECT				= (DUAL_UPPERLIMB_COMMAND + 22),
+		RELEASE_OBJECT				= (DUAL_UPPERLIMB_COMMAND + 24),
+		WAIT_EVENT					= (DUAL_UPPERLIMB_COMMAND + 26),
+		WAIT_EVENT_ASYNC			= (DUAL_UPPERLIMB_COMMAND + 28),
+		WAIT_EVENT_SIGNALED			= (DUAL_UPPERLIMB_COMMAND + 30),
+		ADD_VEL_TRAJECTORY			= (DUAL_UPPERLIMB_COMMAND + 32),
+		WAIT_VEL_TRAJECTORY_END			= (DUAL_UPPERLIMB_COMMAND + 34),
+		WAIT_VEL_TRAJECTORY_END_ASYNC	= (DUAL_UPPERLIMB_COMMAND + 36),
+		VEL_TRAJECTORY_ASYNC_FINISHED	= (DUAL_UPPERLIMB_COMMAND + 38),
+	};
+
+	enum Events
+	{
+		RobotHandNoObject = 1,
+		AttachedBottleNoCap,
+	};
+
+	enum EventTimeout
+	{
+		None = 0,
+		Infinit = -1
+	};
+
+	enum EventResult
+	{
+		Failure = 0,
+		Timeout,
+		NonSignaled,
+		Signaled
+	};
+}
+
 
 
 

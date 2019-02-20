@@ -1,0 +1,30 @@
+﻿Compilazione avviata 20/02/2019 14:20:34.
+Progetto "C:\ARoS_ROS_interface_DEPS\PHRI\build\YarpCommunication\YarpCommunication.vcxproj" sul nodo 2 (destinazioni: build).
+PrepareForBuild:
+  Creazione directory "C:\ARoS_ROS_interface_DEPS\PHRI\build\YarpCommunication\Debug\".
+InitializeBuildStatus:
+  Creazione di "YarpCommunication.dir\Debug\YarpCommunication.unsuccessfulbuild". È stato specificato "AlwaysCreate".
+CustomBuild:
+  Building Custom Rule C:/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/CMakeLists.txt
+  CMake does not need to re-run because C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication/CMakeFiles/generate.stamp is up-to-date.
+ClCompile:
+  C:\Programmi\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\local\ACE_wrappers /IC:\local\YARP\include /IC:\ARoS_ROS_interface_DEPS\Libraries\DataShare /IC:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include /IC:\local\Intel\IPP\6.1.2.041\ia32\include /IC:\ARoS_ROS_interface_DEPS\Libraries\Matrix /IC:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include /IC:\ARoS_ROS_interface_DEPS\Libraries\Utilities /IC:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include /IC:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp /IC:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include /IC:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\src /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D USE_YARP /D USE_DataShare /D IPP_VERSION_MAJOR=6 /D IPP_VERSION_MINOR=1 /D IPP_VERSION_UPDATE=2 /D USE_IPP /D USE_Matrix /D USE_Utilities /D _CRT_SECURE_NO_WARNINGS /D WINVER=0x0501 /D NTDDI_VERSION=NTDDI_WINXP /D _WIN32_WINNT=0x0501 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"YarpCommunication.dir\Debug\\" /Fd"YarpCommunication.dir\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\YarpCommunication\cpp\src\Message.cpp ..\..\..\YarpCommunication\cpp\src\YarpCommBase.cpp ..\..\..\YarpCommunication\cpp\src\YarpCommunication.cpp ..\..\..\YarpCommunication\cpp\src\YarpConnector.cpp
+  Message.cpp
+  YarpCommBase.cpp
+  YarpCommunication.cpp
+  YarpConnector.cpp
+  Generazione del codice in corso...
+Lib:
+  C:\Programmi\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\ARoS_ROS_interface_DEPS\PHRI\build\YarpCommunication\Debug\YarpCommunication.lib" /NOLOGO YarpCommunication.dir\Debug\Message.obj
+  YarpCommunication.dir\Debug\YarpCommBase.obj
+  YarpCommunication.dir\Debug\YarpCommunication.obj
+  YarpCommunication.dir\Debug\YarpConnector.obj  /machine:X86
+  YarpCommunication.vcxproj -> C:\ARoS_ROS_interface_DEPS\PHRI\build\YarpCommunication\Debug\YarpCommunication.lib
+FinalizeBuildStatus:
+  Eliminazione del file "YarpCommunication.dir\Debug\YarpCommunication.unsuccessfulbuild" in corso.
+  Aggiornamento timestamp di "YarpCommunication.dir\Debug\YarpCommunication.lastbuildstate".
+Compilazione progetto "C:\ARoS_ROS_interface_DEPS\PHRI\build\YarpCommunication\YarpCommunication.vcxproj" (destinazioni: build) completata.
+
+Compilazione completata.
+
+Tempo trascorso 00:00:01.39

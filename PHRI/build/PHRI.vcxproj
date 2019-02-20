@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7EFC9344-7A6C-3215-9087-EB4CDA607414}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>PHRI</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\ARoS_ROS_interface_DEPS\PHRI\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PHRI.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PHRI</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\ARoS_ROS_interface_DEPS\PHRI\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PHRI.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PHRI</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\ARoS_ROS_interface_DEPS\PHRI\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">PHRI.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">PHRI</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\ARoS_ROS_interface_DEPS\PHRI\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">PHRI.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">PHRI</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;USE_YARP;USE_DataShare;IPP_VERSION_MAJOR=6;IPP_VERSION_MINOR=1;IPP_VERSION_UPDATE=2;USE_IPP;USE_Matrix;USE_Utilities;USE_YarpCommunication;_CRT_SECURE_NO_WARNINGS;WINVER=0x0501;NTDDI_VERSION=NTDDI_WINXP;_WIN32_WINNT=0x0501;_CRT_NONSTDC_NO_DEPRECATE;_AFXDLL;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;USE_YARP;USE_DataShare;IPP_VERSION_MAJOR=6;IPP_VERSION_MINOR=1;IPP_VERSION_UPDATE=2;USE_IPP;USE_Matrix;USE_Utilities;USE_YarpCommunication;_CRT_SECURE_NO_WARNINGS;WINVER=0x0501;NTDDI_VERSION=NTDDI_WINXP;_WIN32_WINNT=0x0501;_CRT_NONSTDC_NO_DEPRECATE;_AFXDLL;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippac.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippch.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcore.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcv.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippgen.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippj.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ipps.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\libiomp5md.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;DataShare\Debug\DataShare.lib;Matrix\Debug\Matrix.lib;Utilities\Debug\Utilities.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;YarpCommunication\Debug\YarpCommunication.lib;Utilities\Debug\Utilities.lib;Matrix\Debug\Matrix.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippac.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippch.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcore.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcv.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippgen.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippj.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ipps.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\libiomp5md.lib;DataShare\Debug\DataShare.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\ACE_wrappers\lib\ACEd.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare;C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare/$(Configuration);C:/local/Intel/IPP/6.1.2.041/ia32/stublib;C:/local/Intel/IPP/6.1.2.041/ia32/stublib/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix;C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities;C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication;C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/ARoS_ROS_interface_DEPS/PHRI/build/Debug/PHRI.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/ARoS_ROS_interface_DEPS/PHRI/build/Debug/PHRI.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_DataShare;IPP_VERSION_MAJOR=6;IPP_VERSION_MINOR=1;IPP_VERSION_UPDATE=2;USE_IPP;USE_Matrix;USE_Utilities;USE_YarpCommunication;_CRT_SECURE_NO_WARNINGS;WINVER=0x0501;NTDDI_VERSION=NTDDI_WINXP;_WIN32_WINNT=0x0501;_CRT_NONSTDC_NO_DEPRECATE;_AFXDLL;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_DataShare;IPP_VERSION_MAJOR=6;IPP_VERSION_MINOR=1;IPP_VERSION_UPDATE=2;USE_IPP;USE_Matrix;USE_Utilities;USE_YarpCommunication;_CRT_SECURE_NO_WARNINGS;WINVER=0x0501;NTDDI_VERSION=NTDDI_WINXP;_WIN32_WINNT=0x0501;_CRT_NONSTDC_NO_DEPRECATE;_AFXDLL;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippac.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippch.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcore.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcv.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippgen.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippj.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ipps.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\libiomp5md.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;DataShare\Release\DataShare.lib;Matrix\Release\Matrix.lib;Utilities\Release\Utilities.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;YarpCommunication\Release\YarpCommunication.lib;Utilities\Release\Utilities.lib;Matrix\Release\Matrix.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippac.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippch.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcore.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcv.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippgen.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippj.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ipps.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\libiomp5md.lib;DataShare\Release\DataShare.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\ACE_wrappers\lib\ACE.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare;C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare/$(Configuration);C:/local/Intel/IPP/6.1.2.041/ia32/stublib;C:/local/Intel/IPP/6.1.2.041/ia32/stublib/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix;C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities;C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication;C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/ARoS_ROS_interface_DEPS/PHRI/build/Release/PHRI.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/ARoS_ROS_interface_DEPS/PHRI/build/Release/PHRI.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_DataShare;IPP_VERSION_MAJOR=6;IPP_VERSION_MINOR=1;IPP_VERSION_UPDATE=2;USE_IPP;USE_Matrix;USE_Utilities;USE_YarpCommunication;_CRT_SECURE_NO_WARNINGS;WINVER=0x0501;NTDDI_VERSION=NTDDI_WINXP;_WIN32_WINNT=0x0501;_CRT_NONSTDC_NO_DEPRECATE;_AFXDLL;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_DataShare;IPP_VERSION_MAJOR=6;IPP_VERSION_MINOR=1;IPP_VERSION_UPDATE=2;USE_IPP;USE_Matrix;USE_Utilities;USE_YarpCommunication;_CRT_SECURE_NO_WARNINGS;WINVER=0x0501;NTDDI_VERSION=NTDDI_WINXP;_WIN32_WINNT=0x0501;_CRT_NONSTDC_NO_DEPRECATE;_AFXDLL;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippac.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippch.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcore.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcv.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippgen.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippj.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ipps.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\libiomp5md.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;DataShare\MinSizeRel\DataShare.lib;Matrix\MinSizeRel\Matrix.lib;Utilities\MinSizeRel\Utilities.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;YarpCommunication\MinSizeRel\YarpCommunication.lib;Utilities\MinSizeRel\Utilities.lib;Matrix\MinSizeRel\Matrix.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippac.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippch.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcore.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcv.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippgen.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippj.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ipps.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\libiomp5md.lib;DataShare\MinSizeRel\DataShare.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\ACE_wrappers\lib\ACEd.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare;C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare/$(Configuration);C:/local/Intel/IPP/6.1.2.041/ia32/stublib;C:/local/Intel/IPP/6.1.2.041/ia32/stublib/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix;C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities;C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication;C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/ARoS_ROS_interface_DEPS/PHRI/build/MinSizeRel/PHRI.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/ARoS_ROS_interface_DEPS/PHRI/build/MinSizeRel/PHRI.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_DataShare;IPP_VERSION_MAJOR=6;IPP_VERSION_MINOR=1;IPP_VERSION_UPDATE=2;USE_IPP;USE_Matrix;USE_Utilities;USE_YarpCommunication;_CRT_SECURE_NO_WARNINGS;WINVER=0x0501;NTDDI_VERSION=NTDDI_WINXP;_WIN32_WINNT=0x0501;_CRT_NONSTDC_NO_DEPRECATE;_AFXDLL;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_DataShare;IPP_VERSION_MAJOR=6;IPP_VERSION_MINOR=1;IPP_VERSION_UPDATE=2;USE_IPP;USE_Matrix;USE_Utilities;USE_YarpCommunication;_CRT_SECURE_NO_WARNINGS;WINVER=0x0501;NTDDI_VERSION=NTDDI_WINXP;_WIN32_WINNT=0x0501;_CRT_NONSTDC_NO_DEPRECATE;_AFXDLL;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\local\ACE_wrappers;C:\local\YARP\include;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include;C:\local\Intel\IPP\6.1.2.041\ia32\include;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\include;C:\ARoS_ROS_interface_DEPS\PHRI;C:\ARoS_ROS_interface_DEPS\PHRI\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippac.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippch.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcore.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcv.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippgen.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippj.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ipps.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\libiomp5md.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;DataShare\RelWithDebInfo\DataShare.lib;Matrix\RelWithDebInfo\Matrix.lib;Utilities\RelWithDebInfo\Utilities.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;YarpCommunication\RelWithDebInfo\YarpCommunication.lib;Utilities\RelWithDebInfo\Utilities.lib;Matrix\RelWithDebInfo\Matrix.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippac.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippch.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcore.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippcv.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippdi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippgen.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippi.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippj.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ipps.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippsr.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvc.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\ippvm.lib;C:\local\Intel\IPP\6.1.2.041\ia32\stublib\libiomp5md.lib;DataShare\RelWithDebInfo\DataShare.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\ACE_wrappers\lib\ACEd.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare;C:/ARoS_ROS_interface_DEPS/PHRI/build/DataShare/$(Configuration);C:/local/Intel/IPP/6.1.2.041/ia32/stublib;C:/local/Intel/IPP/6.1.2.041/ia32/stublib/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix;C:/ARoS_ROS_interface_DEPS/PHRI/build/Matrix/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities;C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities/$(Configuration);C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication;C:/ARoS_ROS_interface_DEPS/PHRI/build/YarpCommunication/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/ARoS_ROS_interface_DEPS/PHRI/build/RelWithDebInfo/PHRI.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/ARoS_ROS_interface_DEPS/PHRI/build/RelWithDebInfo/PHRI.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/ARoS_ROS_interface_DEPS/PHRI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Programmi\CMake\bin\cmake.exe -HC:/ARoS_ROS_interface_DEPS/PHRI -BC:/ARoS_ROS_interface_DEPS/PHRI/build --check-stamp-file C:/ARoS_ROS_interface_DEPS/PHRI/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/ARoS_ROS_interface_DEPS/PHRI/CMakeLists.txt;C:\ARoS_ROS_interface_DEPS\PHRI\CMakeLists.txt;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeSystem.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeCCompiler.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeCXXCompiler.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeRCCompiler.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-debug.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-release.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\DataShareConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\MatrixConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\Intel\IPP\6.1.2.041\ia32\IPPConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\UtilitiesConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\YarpCommunicationConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/ARoS_ROS_interface_DEPS/PHRI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Programmi\CMake\bin\cmake.exe -HC:/ARoS_ROS_interface_DEPS/PHRI -BC:/ARoS_ROS_interface_DEPS/PHRI/build --check-stamp-file C:/ARoS_ROS_interface_DEPS/PHRI/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/ARoS_ROS_interface_DEPS/PHRI/CMakeLists.txt;C:\ARoS_ROS_interface_DEPS\PHRI\CMakeLists.txt;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeSystem.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeCCompiler.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeCXXCompiler.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeRCCompiler.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-debug.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-release.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\DataShareConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\MatrixConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\Intel\IPP\6.1.2.041\ia32\IPPConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\UtilitiesConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\YarpCommunicationConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/ARoS_ROS_interface_DEPS/PHRI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Programmi\CMake\bin\cmake.exe -HC:/ARoS_ROS_interface_DEPS/PHRI -BC:/ARoS_ROS_interface_DEPS/PHRI/build --check-stamp-file C:/ARoS_ROS_interface_DEPS/PHRI/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/ARoS_ROS_interface_DEPS/PHRI/CMakeLists.txt;C:\ARoS_ROS_interface_DEPS\PHRI\CMakeLists.txt;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeSystem.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeCCompiler.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeCXXCompiler.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeRCCompiler.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-debug.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-release.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\DataShareConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\MatrixConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\Intel\IPP\6.1.2.041\ia32\IPPConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\UtilitiesConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\YarpCommunicationConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/ARoS_ROS_interface_DEPS/PHRI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Programmi\CMake\bin\cmake.exe -HC:/ARoS_ROS_interface_DEPS/PHRI -BC:/ARoS_ROS_interface_DEPS/PHRI/build --check-stamp-file C:/ARoS_ROS_interface_DEPS/PHRI/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/ARoS_ROS_interface_DEPS/PHRI/CMakeLists.txt;C:\ARoS_ROS_interface_DEPS\PHRI\CMakeLists.txt;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeSystem.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeCCompiler.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeCXXCompiler.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\3.10.2\CMakeRCCompiler.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;C:\Programmi\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-debug.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-release.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\DataShare\DataShareConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\Matrix\MatrixConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\Intel\IPP\6.1.2.041\ia32\IPPConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\Utilities\UtilitiesConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\YarpCommunicationConfig.cmake;C:\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\ARoS_ROS_interface_DEPS\PHRI\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\ARoS_ROS_interface_DEPS\PHRI\build\CMakeFiles\generate.stamp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ArmThread.cpp"  />
+    <ClCompile Include="..\ArosArm.cpp"  />
+    <ClCompile Include="..\ModuleThread.cpp"  />
+    <ClCompile Include="..\PHRI.cpp"  />
+    <ClCompile Include="..\PHRIDlg.cpp"  />
+    <ClCompile Include="..\YarpCommPHRI.cpp"  />
+    <ClCompile Include="..\stdafx.cpp"  />
+    <ClInclude Include="..\ArmThread.h" />
+    <ClInclude Include="..\ArosArm.h" />
+    <ClInclude Include="..\ModuleThread.h" />
+    <ClInclude Include="..\PHRI.h" />
+    <ClInclude Include="..\PHRIDlg.h" />
+    <ClInclude Include="..\YarpCommPHRI.h" />
+    <ClInclude Include="..\res\resource.h" />
+    <ClInclude Include="..\stdafx.h" />
+    <ClInclude Include="..\targetver.h" />
+    <ResourceCompile Include="..\res\PHRI.rc"  />
+    <None Include="..\res\PHRI.rc2" />
+    <None Include="..\res\PHRI.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\ARoS_ROS_interface_DEPS\PHRI\build\ZERO_CHECK.vcxproj">
+      <Project>{A8BA66A2-7A0D-39DA-B2F3-ED27E0308655}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\ARoS_ROS_interface_DEPS\PHRI\build\DataShare\DataShare.vcxproj">
+      <Project>{FCAB43EC-5DC6-3BB4-B016-F15DF564F3F3}</Project>
+      <Name>DataShare</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\ARoS_ROS_interface_DEPS\PHRI\build\Matrix\Matrix.vcxproj">
+      <Project>{29993D7E-C596-3866-BC76-A65F8E576094}</Project>
+      <Name>Matrix</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\ARoS_ROS_interface_DEPS\PHRI\build\Utilities\Utilities.vcxproj">
+      <Project>{DB242450-A32E-3955-89A7-326A1E571E33}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\ARoS_ROS_interface_DEPS\PHRI\build\YarpCommunication\YarpCommunication.vcxproj">
+      <Project>{0066DFD5-3E77-3569-87BB-4B1013095D2F}</Project>
+      <Name>YarpCommunication</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

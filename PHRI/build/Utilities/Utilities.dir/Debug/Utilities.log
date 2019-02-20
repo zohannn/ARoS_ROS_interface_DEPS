@@ -1,0 +1,26 @@
+﻿Compilazione avviata 20/02/2019 14:20:32.
+Progetto "C:\ARoS_ROS_interface_DEPS\PHRI\build\Utilities\Utilities.vcxproj" sul nodo 2 (destinazioni: build).
+PrepareForBuild:
+  Creazione directory "C:\ARoS_ROS_interface_DEPS\PHRI\build\Utilities\Debug\".
+InitializeBuildStatus:
+  Creazione di "Utilities.dir\Debug\Utilities.unsuccessfulbuild". È stato specificato "AlwaysCreate".
+CustomBuild:
+  Building Custom Rule C:/ARoS_ROS_interface_DEPS/Libraries/Utilities/CMakeLists.txt
+  CMake does not need to re-run because C:/ARoS_ROS_interface_DEPS/PHRI/build/Utilities/CMakeFiles/generate.stamp is up-to-date.
+ClCompile:
+  C:\Programmi\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\local\ACE_wrappers /IC:\local\YARP\include /IC:\ARoS_ROS_interface_DEPS\Libraries\DataShare /IC:\ARoS_ROS_interface_DEPS\Libraries\DataShare\include /IC:\local\Intel\IPP\6.1.2.041\ia32\include /IC:\ARoS_ROS_interface_DEPS\Libraries\Matrix /IC:\ARoS_ROS_interface_DEPS\Libraries\Matrix\include /IC:\ARoS_ROS_interface_DEPS\Libraries\Utilities /IC:\ARoS_ROS_interface_DEPS\Libraries\Utilities\include /IC:\ARoS_ROS_interface_DEPS\Libraries\Utilities\src /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D USE_YARP /D USE_DataShare /D IPP_VERSION_MAJOR=6 /D IPP_VERSION_MINOR=1 /D IPP_VERSION_UPDATE=2 /D USE_IPP /D USE_Matrix /D _CRT_SECURE_NO_WARNINGS /D WINVER=0x0501 /D NTDDI_VERSION=NTDDI_WINXP /D _WIN32_WINNT=0x0501 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Utilities.dir\Debug\\" /Fd"Utilities.dir\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\Libraries\Utilities\src\EnvironmentVars.cpp ..\..\..\Libraries\Utilities\src\string_operations.cpp
+  EnvironmentVars.cpp
+  string_operations.cpp
+  Generazione del codice in corso...
+Lib:
+  C:\Programmi\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\ARoS_ROS_interface_DEPS\PHRI\build\Utilities\Debug\Utilities.lib" /NOLOGO Utilities.dir\Debug\EnvironmentVars.obj
+  Utilities.dir\Debug\string_operations.obj  /machine:X86
+  Utilities.vcxproj -> C:\ARoS_ROS_interface_DEPS\PHRI\build\Utilities\Debug\Utilities.lib
+FinalizeBuildStatus:
+  Eliminazione del file "Utilities.dir\Debug\Utilities.unsuccessfulbuild" in corso.
+  Aggiornamento timestamp di "Utilities.dir\Debug\Utilities.lastbuildstate".
+Compilazione progetto "C:\ARoS_ROS_interface_DEPS\PHRI\build\Utilities\Utilities.vcxproj" (destinazioni: build) completata.
+
+Compilazione completata.
+
+Tempo trascorso 00:00:00.74
