@@ -13,6 +13,7 @@
 #include <boost\scoped_ptr.hpp>
 #include <boost\atomic.hpp>
 #include <boost\thread.hpp>
+#include <boost\chrono\thread_clock.hpp>
 
 //Arm and hand
 #include <AmtecPStepServer.h>
@@ -20,6 +21,16 @@
 #include <barrett_hand_826X.h>
 
 #include "../Core/Joint_States.h"
+
+// Boost logging
+#include <boost\log\core.hpp>
+#include <boost\log\trivial.hpp>
+#include <boost\log\expressions.hpp>
+#include <boost\log\sinks\text_file_backend.hpp>
+#include <boost\log\utility\setup\file.hpp>
+#include <boost\log\utility\setup\common_attributes.hpp>
+#include <boost\log\sources\severity_logger.hpp>
+#include <boost\log\sources\record_ostream.hpp>
 
 class CYarpCommunicationServerUpperLimb : public CYarpCommunication
 {
@@ -60,16 +71,29 @@ protected:
 	boost::shared_ptr<yarp::dev::AmtecLWA7dof> arm; //arm device pointer
 	boost::shared_ptr<yarp::dev::BarrettHand826X> hand; //hand device pointer
 
+	// position
 	//Trajectory step: contains vector of joints values and the time to execute the step
 	typedef std::tuple<std::vector<float>, float> TrajectoryStep;
 	//Trajectory movement: contains vector of steps and flags indicating which devices should run (arm,hand)
 	typedef std::tuple<std::vector<TrajectoryStep>, bool, bool> TrajectoryMovement;
+
+	// velocity
+	// Velocity Trajectory step: contains vector of joints velocity values and the time to execute the step
+	typedef std::tuple<std::vector<float>, float> VelTrajectoryStep;
+	//Velocity Trajectory movement: contains vector of steps and flags indicating which devices should run (arm,hand)
+	typedef std::tuple<std::vector<VelTrajectoryStep>, bool, bool> VelTrajectoryMovement;
 
 	void TrajectoryMovementsExecutor();
 	boost::thread traj_executor_thrd;
 	std::queue<TrajectoryMovement> trajectory_queue; // queue of the trajectory 
 	boost::condition_variable queue_not_empty_cv; // condition variable to notify that the trajectory is not empty
 	boost::mutex queue_mtx; // mutex of the queue for the trajectory executor 
+
+	void VelTrajectoryMovementsExecutor();
+	boost::thread vel_traj_executor_thrd;
+	std::deque<VelTrajectoryMovement> vel_trajectory_queue; // queue of the velocity trajectory 
+	boost::condition_variable vel_queue_not_empty_cv; // condition variable to notify that the velocity trajectory is not empty
+	boost::mutex vel_queue_mtx; // mutex of the queue for the trajectory velocity executor 
 
 	// Barrett Hand position values
 	std::vector<double> Finger1;
@@ -95,6 +119,7 @@ protected:
 	void PrepareHandProcessor();
 	void HandExecutor();
 
+	// position
 	// stop the execution of the threads
 	boost::atomic<bool> stop_executor;
 	boost::atomic<bool> stop_movement;
@@ -105,13 +130,24 @@ protected:
 	boost::mutex executing_movement_mtx;
 	std::string last_error_str;
 
+	// velocity
+	// stop the execution of the threads
+	boost::atomic<bool> stop_vel_executor;
+	boost::atomic<bool> stop_vel_movement;
+	// execution of the movements
+	boost::atomic<bool> executing_vel_movement;
+	boost::atomic<bool> executing_vel_movement_error;
+	boost::condition_variable executing_vel_movement_cv;
+	boost::mutex executing_vel_movement_mtx;
+	std::string last_vel_error_str;
+
 	//Joint states 
 	std::string joint_states_out_name;
 	bool joint_states_out_worker_end_job;
 	yarp::os::BufferedPort<Joint_States> joint_states_out_channel;
-	//boost::mutex joint_states_queue_mtx;
-	//std::queue<Joint_States> joint_states_queue;
-	//boost::condition_variable joint_states_queue_cv;
+	boost::mutex joint_states_queue_mtx;
+	std::queue<Joint_States> joint_states_queue;
+	boost::condition_variable joint_states_queue_cv;
 	boost::thread joint_states_out_worker;
 	void joint_states_job();
 
@@ -131,6 +167,8 @@ public:
 
 	// add a trajectory for the upper-limb
 	void AddTrajectory(std::vector<unsigned> &uParam, std::vector<float> &fData);
+	// add a trajectory of velocities for the upper-limb
+	void AddVelTrajectory(std::vector<unsigned> &uParam, std::vector<float> &fData);
 	// Stop the execution and clear the trajectory
 	void StopClearTrajectory(void);
 
@@ -142,7 +180,12 @@ public:
 	bool ArmProcessor(CMessage &in_req, CMessage &out_reply, void *private_data=nullptr );
 	bool HandProcessor(CMessage &in_req, CMessage &out_reply, void *private_data=nullptr );
 
-		// Initialize
+
+	// logging
+	void init_logging();
+	boost::log::sources::severity_logger< boost::log::trivial::severity_level > lg; // logger
+
+	// Initialize
 	bool Init( void );
 
 	// Terminate
@@ -169,9 +212,11 @@ public:
 	// Set positions of the joints
 	void MovePos( std::vector<float> fData );
 	// Set velocities of the joints
-	void MoveVel( std::vector<float> fData );
+	void MoveVel( std::vector<float>& fData );
 	// Wait the end of the trajectory
 	int WaitTrajectoryEnd(int timeout_ms);
+	// Wait the end of the trajectory
+	int WaitVelTrajectoryEnd(int timeout_ms);
 
 	// ----------------- ARM Specific functions ------------------------------- //
 

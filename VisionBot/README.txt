@@ -1,8 +1,11 @@
+when CMake
+
 Uncheck
-	UseBoost
-	
+	USE_Boost
+
 Check
-	ImageIO_PACKAGE_CLEye
-	ImageIO_PACKAGE_SVS
 	USE_NVIDIA_CUDA
 	USE_OPENCV_QT
+	VisionBot_EXTERNAL_PROJECT_StereoVidere
+	ImageIO_PACKAGE_CLEye
+	Image_PACKAGE_SVS

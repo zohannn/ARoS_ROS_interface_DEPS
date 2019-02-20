@@ -18,6 +18,8 @@ void CYarpCommunicationServerUpperLimb::HandExecutor()
 	{
 		if (Finger1.size()>0 && Finger2.size()>0 && Finger3.size()>0)
 		{
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+			hand->stopRTmode();
 			//comm_manager.mutex_barrett.wait();
 			HandConfig[1] = (int)Finger1[0];
 			HandConfig[2] = (int)Finger2[0];
@@ -47,6 +49,8 @@ void CYarpCommunicationServerUpperLimb::HandExecutor()
 		{
 			if (Finger1.size()>0)
 			{
+				boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+				hand->stopRTmode();
 				//comm_manager.mutex_barrett.wait();
 				HandConfig[1] = Finger1[0];
 
@@ -57,6 +61,8 @@ void CYarpCommunicationServerUpperLimb::HandExecutor()
 			}
 			if (Finger2.size()>0)
 			{
+				boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+				hand->stopRTmode();
 				//comm_manager.mutex_barrett.wait();
 				HandConfig[2] = Finger2[0];
 
@@ -68,6 +74,8 @@ void CYarpCommunicationServerUpperLimb::HandExecutor()
 			}
 			if (Finger3.size()>0)
 			{
+				boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+				hand->stopRTmode();
 				//comm_manager.mutex_barrett.wait();
 				HandConfig[3] = Finger3[0];
 
@@ -80,6 +88,8 @@ void CYarpCommunicationServerUpperLimb::HandExecutor()
 
 		if (Spread.size()>0)
 		{
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+			hand->stopRTmode();
 			//comm_manager.mutex_barrett.wait();
 			HandConfig[0] = Spread[0];
 
@@ -161,28 +171,32 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 	{
 	case BARRETTHAND_INITIALIZE:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = Initialize();
 	}
 	break;
 
 	case BARRETTHAND_INITJOINT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = InitJoint(in_req.fData);
 	}
 	break;
 
 	case BARRETTHAND_OPENJOINT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = OpenJoint(in_req.fData);
 	}
 	break;
 
 	case BARRETTHAND_OPEN:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		hand_machine_state = HandMachineState::Releasing;
 		bCommandSuccess = Open();
 	}
@@ -190,14 +204,16 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_CLOSEJOINT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = CloseJoint(in_req.fData);
 	}
 	break;
 
 	case BARRETTHAND_CLOSE:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		hand_machine_state = HandMachineState::Grasping;
 		bCommandSuccess = Close();
 	}
@@ -205,14 +221,16 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_TORQUEOPEN_JOINT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = OpenTorqueJoint(in_req.fData);
 	}
 	break;
 
 	case BARRETTHAND_TORQUEOPEN:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		hand_machine_state = HandMachineState::Releasing;
 		bCommandSuccess = OpenTorque();
 	}
@@ -220,14 +238,16 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_TORQUECLOSE_JOINT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = CloseTorqueJoint(in_req.fData);
 	}
 	break;
 
 	case BARRETTHAND_TORQUECLOSE:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		hand_machine_state = HandMachineState::Grasping;
 		bCommandSuccess = CloseTorque();
 	}
@@ -235,14 +255,16 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_SETOPENTARGET:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = SetOpenTarget(in_req.fData);
 	}
 	break;
 
 	case BARRETTHAND_SETCLOSETARGET:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = SetCloseTarget(in_req.fData);
 	}
 	break;
@@ -254,7 +276,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 		}
 		out_reply.fData.resize(4);
 		{
-			boost::unique_lock<boost::mutex> lck(mutex_barrett);
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+			boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 			bCommandSuccess = GetOpenTarget(out_reply.fData);
 		}
 		break;
@@ -266,28 +289,32 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 		}
 		out_reply.fData.resize(4);
 		{
-			boost::unique_lock<boost::mutex> lck(mutex_barrett);
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+			boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 			bCommandSuccess = GetCloseTarget(out_reply.fData);
 		}
 		break;
 
 	case BARRETTHAND_SETOPENTARGETJOINT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = SetOpenTargetJoint((int)in_req.fData[0], (double)in_req.fData[1]);
 	}
 	break;
 
 	case BARRETTHAND_SETCLOSETARGETJOINT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = SetCloseTargetJoint((int)in_req.fData[0], (double)in_req.fData[1]);
 	}
 	break;
 
 	case BARRETTHAND_SETMAXSTRAINGAUGE:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = SetMaxStrain(in_req.uParam);
 	}
 	break;
@@ -298,7 +325,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 			boost::this_thread::sleep_for(boost::chrono::milliseconds(100));
 		}
 		{
-			boost::unique_lock<boost::mutex> lck(mutex_barrett);
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+			boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 			out_reply.fData.assign(1, GetOpenTargetJoint((int)in_req.fData[0]));
 		}
 		break;
@@ -309,14 +337,15 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 			boost::this_thread::sleep_for(boost::chrono::milliseconds(100));
 		}
 		{
-			boost::unique_lock<boost::mutex> lck(mutex_barrett);
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
 			out_reply.fData.assign(1, GetCloseTargetJoint((int)in_req.fData[0]));
 		}
 		break;
 
 	case BARRETTHAND_SETVELOCITY:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = SetVelocity(in_req.fData);
 	}
 	break;
@@ -328,7 +357,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 		}
 		out_reply.fData.assign(4, 0.0f);
 		{
-			boost::unique_lock<boost::mutex> lck(mutex_barrett);
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+			boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 			bCommandSuccess = GetVelocity(out_reply.fData);
 		}
 		break;
@@ -339,7 +369,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 			boost::this_thread::sleep_for(boost::chrono::milliseconds(100));
 		}
 		{
-			boost::unique_lock<boost::mutex> lck(mutex_barrett);
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+			boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 			out_reply.fData.assign(4, 0.0f);
 			bCommandSuccess = GetPositions(out_reply.fData);
 		}
@@ -347,21 +378,24 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_SETOPENVELOCITY:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = SetOpenVelocity(in_req.fData);
 	}
 	break;
 
 	case BARRETTHAND_SETCLOSEVELOCITY:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = SetCloseVelocity(in_req.fData);
 	}
 	break;
 
 	case BARRETTHAND_SETACCELERATION:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = SetAcceleration(in_req.fData);
 	}
 	break;
@@ -373,7 +407,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 		}
 		out_reply.fData.assign(4, 0.0f);
 		{
-			boost::unique_lock<boost::mutex> lck(mutex_barrett);
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+			boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 			bCommandSuccess = GetAcceleration(out_reply.fData);
 		}
 		break;
@@ -384,7 +419,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 			boost::this_thread::sleep_for(boost::chrono::milliseconds(100));
 		}
 		{
-			boost::unique_lock<boost::mutex> lck(mutex_barrett);
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+			boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 			bCommandSuccess = GetStrainGauge(out_reply.uParam);
 		}
 		break;
@@ -395,28 +431,32 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 			boost::this_thread::sleep_for(boost::chrono::milliseconds(100));
 		}
 		{
-			boost::unique_lock<boost::mutex> lck(mutex_barrett);
+			boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+			boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 			bCommandSuccess = GetMaxStrain(out_reply.uParam);
 		}
 		break;
 
 	case BARRETTHAND_INCREMENTALMOVEJOINT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = IncrementalMoveJoint((int)in_req.fData[0], (double)in_req.fData[1]);
 	}
 	break;
 
 	case BARRETTHAND_INCREMENTALMOVEALL:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = IncrementalMove(in_req.fData);
 	}
 	break;
 
 	case BARRETTHAND_MOVEJOINT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		//boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		//boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		switch ((int)in_req.fData[0])
 		{
 		case 0:
@@ -437,14 +477,18 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_MOVESPREAD:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		//boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+		//hand->stopRTmode();
+		//boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		Spread.push_back(in_req.fData[0]);
 	}
 	break;
 
 	case BARRETTHAND_MOVEALL:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		//boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+		//hand->stopRTmode();
+		//boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		Spread.push_back(in_req.fData[0]);
 		Finger1.push_back(in_req.fData[1]);
 		Finger2.push_back(in_req.fData[2]);
@@ -454,7 +498,9 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_MOVEALLFINGERS:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		//boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+		//hand->stopRTmode();
+		//boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		Finger1.push_back(in_req.fData[1]);
 		Finger2.push_back(in_req.fData[2]);
 		Finger3.push_back(in_req.fData[3]);
@@ -463,7 +509,9 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_MOVEFINGERS:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		//boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+		//hand->stopRTmode();
+		//boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		Finger1.push_back(in_req.fData[0]);
 		Finger2.push_back(in_req.fData[0]);
 		Finger3.push_back(in_req.fData[0]);
@@ -472,7 +520,9 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_MOVETWOFINGERS:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		//boost::unique_lock<boost::mutex> lck(mutex_barrett); 
+		//hand->stopRTmode();
+		//boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		Finger1.push_back(in_req.fData[0]);
 		Finger2.push_back(in_req.fData[0]);
 		Finger3.push_back(in_req.fData[1]);
@@ -481,7 +531,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_MOVETWOFINGERS_WAIT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		HandConfig[1] = in_req.fData[0];
 		HandConfig[2] = in_req.fData[0];
 		HandConfig[3] = in_req.fData[1];
@@ -491,7 +542,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_MOVEALLFINGERS_WAIT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		HandConfig[1] = in_req.fData[0];
 		HandConfig[2] = in_req.fData[0];
 		HandConfig[3] = in_req.fData[0];
@@ -501,7 +553,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_MOVEFINGERS_WAIT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		HandConfig[1] = in_req.fData[0];
 		HandConfig[2] = in_req.fData[1];
 		HandConfig[3] = in_req.fData[2];
@@ -511,7 +564,8 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_MOVEJOINT_WAIT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		HandConfig[(int)in_req.fData[0]] = in_req.fData[1];
 		bCommandSuccess = hand->positionMove((int)in_req.fData[0], in_req.fData[1]);
 	}
@@ -519,13 +573,15 @@ bool CYarpCommunicationServerUpperLimb::HandProcessor(CMessage &in_req, CMessage
 
 	case BARRETTHAND_MOVESPREAD_WAIT:
 	{
-		boost::unique_lock<boost::mutex> lck(mutex_barrett);
+		boost::unique_lock<boost::mutex> lck(mutex_barrett); hand->stopRTmode();
+		boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		HandConfig[0] = in_req.fData[0];
 		bCommandSuccess = hand->positionMove(0, HandConfig[0]);
 	}
 	break;
 
-	case BARRETTHAND_WRITE_COMMAND_RAW:
+	case BARRETTHAND_WRITE_COMMAND_RAW: 
+		hand->stopRTmode(); boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 		bCommandSuccess = hand->Write_Command_Read_Reply_Clean(in_req.strText, out_reply.strText);
 		break;
 
