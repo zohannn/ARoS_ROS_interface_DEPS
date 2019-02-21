@@ -107,7 +107,7 @@ protected:
 	virtual void Action_Interpretation( void ) {};
 
 	//--------------------------------------------------------------------------
-	// Variable functions acording to the task
+	// Variable functions according to the task
 public:
 
 	// Search for objects for the robot task

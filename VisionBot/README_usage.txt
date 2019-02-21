@@ -1,0 +1,3 @@
+1. Select the task in the file Config/AppConfig.ini
+2. Options->Video parameters
+3. Colour operations->Segmentation feedback and Colour operations->Operations... 
