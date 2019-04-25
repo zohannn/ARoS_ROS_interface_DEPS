@@ -38,6 +38,11 @@ set( SRC_DIRS
 
 include_directories(
 	${SRC_DIRS}
+	$ENV{ACE_ROOT}
+)
+
+link_directories(
+	$ENV{ACE_ROOT}/lib
 )
 
 #-------------------------------------------------------------------------------
@@ -73,15 +78,23 @@ add_definitions( -DUSE_BOOST_SERIAL_ASIO )
 
 #-------------------------------------------------------------------------------
 	
-set( EXTERNAL_PACKAGES
-	YARP
-	FilesDirs
-	MathLib
-	Utilities
-	YarpCommunication
-)
+#set( external_packages
+#	yarp
+#	filesdirs
+#	mathlib
+#	utilities
+#	yarpcommunication
+#)
+#configure_package_list( ${external_packages} )
 
-Configure_Package_List( ${EXTERNAL_PACKAGES} )
+#Project dependencies include directories
+
+
+Configure_Package(FilesDirs)
+Configure_Package(MathLib)
+Configure_Package(Utilities)
+Configure_Package(YARP)
+Configure_Package(YarpCommunication)
 
 
 #-------------------------------------------------------------------------------
@@ -128,5 +141,5 @@ set( myApp_SRCS
 
 #create the executable
 add_executable( ${PROJECT_NAME} ${myApp_SRCS} )
-
+target_link_libraries( ${PROJECT_NAME} $ENV{ACE_ROOT}/lib/ACEd.lib )
 Link_libraries_to_project()

@@ -34,7 +34,7 @@
 //----------------------------------------------------------------
 
 #define DEFAULT_PANTILT_NAME	"/aros/pantilt"
-#define DEFAULT_CONF_FILE		"pantilt.ini"
+#define DEFAULT_CONF_FILE		"../config/pantilt.ini"
 
 //------------------------------------------------------------------------------
 // Handle signal Ctrl+C to terminate execution

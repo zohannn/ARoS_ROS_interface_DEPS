@@ -82,7 +82,7 @@ bool CProcessImageComputerAssembly::SearchObjects_Hand( void )
 	else
 	{
 		// Use simple colour association
-		bResult = Detect_Object_From_Primary_Colour( OBJECT_HAND,0,2500 );
+		bResult = Detect_Object_From_Primary_Colour( OBJECT_HAND,5,4000 );
 	}
 
 	Define_New_Region_of_Interest( OBJECT_HAND, cv::Rect( -40, 5, 80, 90 ) );
