@@ -1,0 +1,9 @@
+# CMake generation dependency list for this directory.
+D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/CMakeLists.txt
+D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/CMakeScripts/CommonScripts.cmake
+C:/local/YARP/lib/YARP-2.3.61/YARPConfigVersion.cmake
+C:/local/YARP/lib/YARP-2.3.61/YARPConfig.cmake
+D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/MutexWrapper/MutexWrapperConfig.cmake
+D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/CMakeScripts/CommonScripts.cmake
+D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/UtilitiesConfig.cmake
+D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/CMakeScripts/CommonScripts.cmake

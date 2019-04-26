@@ -66,11 +66,14 @@ set( SRC_DIRS
 #Project dependencies include directories
 include_directories(
 	${SRC_DIRS}
+	$ENV{ACE_ROOT}
 )
 
 link_directories(
 	${MODULES_DIR}/amtec_lwa_7dof/lib
+	$ENV{ACE_ROOT}/lib
 )
+
 	
 Configure_Package(YARP)
 Configure_Package(FilesDirs)
@@ -123,9 +126,7 @@ set( myApp_SRCS
 add_executable( ${PROJECT_NAME} ${myApp_SRCS} )
 
 target_link_libraries( ${PROJECT_NAME} ${MODULES_DIR}/amtec_lwa_7dof/lib/m5apiw32.lib )
-#link to which libs
-#target_link_libraries(UpperLimb amtec_lwa_7dof barrett_hand_826X Amtec_PStepServer YarpCommunication ${YARP_LIBRARIES})
-#target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES})
+target_link_libraries( ${PROJECT_NAME} $ENV{ACE_ROOT}/lib/ACEd.lib )
 Link_libraries_to_project()
 
 #-------------------------------------------------------------------------------

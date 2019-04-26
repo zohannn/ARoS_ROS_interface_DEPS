@@ -1,0 +1,24 @@
+﻿Build started 26-04-2019 11:09:36.
+     1>Project "D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\FilesDirs\FilesDirs.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "FilesDirs.dir\Debug\FilesDirs.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         All outputs are up-to-date.
+       ClCompile:
+         C:\Programas\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:/local/boost_1_57_0 /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src /IC:/local/ACE_wrappers /IC:/local/YARP/include /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/MutexWrapper /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/MutexWrapper/include /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include /ID:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/src /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D USE_YARP /D USE_YARP /D UNICODE /D _UNICODE /D USE_Utilities /D USE_YARP /D UNICODE /D _UNICODE /D USE_MutexWrapper /D UNICODE /D _UNICODE /D USE_Utilities /D _CRT_SECURE_NO_WARNINGS /D WINVER=0x0501 /D NTDDI_VERSION=NTDDI_WINXP /D _WIN32_WINNT=0x0501 /D "CMAKE_INTDIR=\"Debug\"" /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"FilesDirs.dir\Debug\\" /Fd"D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs/Debug/FilesDirs.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\Libraries\FilesDirs\src\ConfigFile.cpp ..\..\..\Libraries\FilesDirs\src\LogFile.cpp
+         ConfigFile.cpp
+         LogFile.cpp
+         Generating Code...
+       Lib:
+         C:\Programas\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\FilesDirs\Debug\FilesDirs.lib" /NOLOGO FilesDirs.dir\Debug\ConfigFile.obj
+         FilesDirs.dir\Debug\Files_Directories.obj
+         FilesDirs.dir\Debug\LogFile.obj
+         FilesDirs.vcxproj -> D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\FilesDirs\Debug\FilesDirs.lib
+       FinalizeBuildStatus:
+         Deleting file "FilesDirs.dir\Debug\FilesDirs.unsuccessfulbuild".
+         Touching "FilesDirs.dir\Debug\FilesDirs.lastbuildstate".
+     1>Done Building Project "D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\FilesDirs\FilesDirs.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.40

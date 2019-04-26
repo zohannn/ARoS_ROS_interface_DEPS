@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{2FE0FF25-D248-489D-9506-BDB621E6FE76}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>AmtecLWArm</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AmtecLWArm.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AmtecLWArm</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AmtecLWArm.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AmtecLWArm</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">AmtecLWArm.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">AmtecLWArm</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">AmtecLWArm.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">AmtecLWArm</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;USE_YARP;USE_YARP;UNICODE;_UNICODE;USE_Utilities;UNICODE;_UNICODE;USE_FilesDirs;USE_YARP;UNICODE;_UNICODE;USE_YarpCommunication;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>Debug</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Debug/AmtecLWArm.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;USE_YARP;USE_YARP;UNICODE;_UNICODE;USE_Utilities;UNICODE;_UNICODE;USE_FilesDirs;USE_YARP;UNICODE;_UNICODE;USE_YarpCommunication;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Hardware\YARP_Modules\amtec_lwa_7dof\lib\m5apiw32.lib;C:\local\ACE_wrappers\lib\ACEd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;Utilities\Debug\Utilities.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;FilesDirs\MutexWrapper\Debug\MutexWrapper.lib;Utilities\Debug\Utilities.lib;FilesDirs\Debug\FilesDirs.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;YarpCommunication\Debug\YarpCommunication.lib;FilesDirs\Debug\FilesDirs.lib;FilesDirs\MutexWrapper\Debug\MutexWrapper.lib;Utilities\Debug\Utilities.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\ACE_wrappers\lib\ACEd.lib;winmm.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/local/boost_1_57_0/lib32-msvc-10.0;C:/local/boost_1_57_0/lib32-msvc-10.0/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof/lib;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof/lib/$(Configuration);;C:/local/ACE_wrappers/lib;C:/local/ACE_wrappers/lib/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Utilities/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/YarpCommunication;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/YarpCommunication/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Debug/AmtecLWArm.lib</ImportLibrary>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Debug/AmtecLWArm.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_YARP;UNICODE;_UNICODE;USE_Utilities;UNICODE;_UNICODE;USE_FilesDirs;USE_YARP;UNICODE;_UNICODE;USE_YarpCommunication;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>Release</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Release/AmtecLWArm.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_YARP;UNICODE;_UNICODE;USE_Utilities;UNICODE;_UNICODE;USE_FilesDirs;USE_YARP;UNICODE;_UNICODE;USE_YarpCommunication;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Hardware\YARP_Modules\amtec_lwa_7dof\lib\m5apiw32.lib;C:\local\ACE_wrappers\lib\ACEd.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;Utilities\Release\Utilities.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;FilesDirs\MutexWrapper\Release\MutexWrapper.lib;Utilities\Release\Utilities.lib;FilesDirs\Release\FilesDirs.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;YarpCommunication\Release\YarpCommunication.lib;FilesDirs\Release\FilesDirs.lib;FilesDirs\MutexWrapper\Release\MutexWrapper.lib;Utilities\Release\Utilities.lib;C:\local\YARP\lib\YARP_dev.lib;C:\local\YARP\lib\YARP_sig.lib;C:\local\YARP\lib\YARP_name.lib;C:\local\YARP\lib\YARP_init.lib;C:\local\YARP\lib\YARP_OS.lib;C:\local\ACE_wrappers\lib\ACE.lib;winmm.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/local/boost_1_57_0/lib32-msvc-10.0;C:/local/boost_1_57_0/lib32-msvc-10.0/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof/lib;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof/lib/$(Configuration);;C:/local/ACE_wrappers/lib;C:/local/ACE_wrappers/lib/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Utilities/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/YarpCommunication;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/YarpCommunication/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Release/AmtecLWArm.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Release/AmtecLWArm.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_YARP;UNICODE;_UNICODE;USE_Utilities;UNICODE;_UNICODE;USE_FilesDirs;USE_YARP;UNICODE;_UNICODE;USE_YarpCommunication;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>MinSizeRel</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/MinSizeRel/AmtecLWArm.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_YARP;UNICODE;_UNICODE;USE_Utilities;UNICODE;_UNICODE;USE_FilesDirs;USE_YARP;UNICODE;_UNICODE;USE_YarpCommunication;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Hardware\YARP_Modules\amtec_lwa_7dof\lib\m5apiw32.lib;C:\local\ACE_wrappers\lib\ACEd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;Utilities\MinSizeRel\Utilities.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;FilesDirs\MutexWrapper\MinSizeRel\MutexWrapper.lib;Utilities\MinSizeRel\Utilities.lib;FilesDirs\MinSizeRel\FilesDirs.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;YarpCommunication\MinSizeRel\YarpCommunication.lib;FilesDirs\MinSizeRel\FilesDirs.lib;FilesDirs\MutexWrapper\MinSizeRel\MutexWrapper.lib;Utilities\MinSizeRel\Utilities.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\ACE_wrappers\lib\ACEd.lib;winmm.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/local/boost_1_57_0/lib32-msvc-10.0;C:/local/boost_1_57_0/lib32-msvc-10.0/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof/lib;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof/lib/$(Configuration);;C:/local/ACE_wrappers/lib;C:/local/ACE_wrappers/lib/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Utilities/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/YarpCommunication;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/YarpCommunication/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/MinSizeRel/AmtecLWArm.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/MinSizeRel/AmtecLWArm.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_YARP;UNICODE;_UNICODE;USE_Utilities;UNICODE;_UNICODE;USE_FilesDirs;USE_YARP;UNICODE;_UNICODE;USE_YarpCommunication;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>RelWithDebInfo</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/RelWithDebInfo/AmtecLWArm.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;USE_YARP;USE_YARP;UNICODE;_UNICODE;USE_Utilities;UNICODE;_UNICODE;USE_FilesDirs;USE_YARP;UNICODE;_UNICODE;USE_YarpCommunication;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:/local/boost_1_57_0;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Arm;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Communications;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/config;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/Core;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/barrett_hand_826X;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/serial_asio;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Wrappers/Amtec_PStepServer/src;C:/local/ACE_wrappers;C:/local/YARP/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/Utilities/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Libraries/FilesDirs/include;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp;D:/Gianpaolo/ARoS_ROS_interface_DEPS/YarpCommunication/cpp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Hardware\YARP_Modules\amtec_lwa_7dof\lib\m5apiw32.lib;C:\local\ACE_wrappers\lib\ACEd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;Utilities\RelWithDebInfo\Utilities.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;FilesDirs\MutexWrapper\RelWithDebInfo\MutexWrapper.lib;Utilities\RelWithDebInfo\Utilities.lib;FilesDirs\RelWithDebInfo\FilesDirs.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;YarpCommunication\RelWithDebInfo\YarpCommunication.lib;FilesDirs\RelWithDebInfo\FilesDirs.lib;FilesDirs\MutexWrapper\RelWithDebInfo\MutexWrapper.lib;Utilities\RelWithDebInfo\Utilities.lib;C:\local\YARP\lib\YARP_devd.lib;C:\local\YARP\lib\YARP_sigd.lib;C:\local\YARP\lib\YARP_named.lib;C:\local\YARP\lib\YARP_initd.lib;C:\local\YARP\lib\YARP_OSd.lib;C:\local\ACE_wrappers\lib\ACEd.lib;winmm.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/local/boost_1_57_0/lib32-msvc-10.0;C:/local/boost_1_57_0/lib32-msvc-10.0/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof/lib;D:/Gianpaolo/ARoS_ROS_interface_DEPS/Hardware/YARP_Modules/amtec_lwa_7dof/lib/$(Configuration);;C:/local/ACE_wrappers/lib;C:/local/ACE_wrappers/lib/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Utilities;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Utilities/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs/$(Configuration);;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/YarpCommunication;D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/YarpCommunication/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/RelWithDebInfo/AmtecLWArm.lib</ImportLibrary>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/RelWithDebInfo/AmtecLWArm.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Programas\CMake 2.8\bin\cmake.exe" -HD:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm -BD:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build --check-stamp-file D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/CMakeLists.txt;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\CMakeLists.txt;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeSystem.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeCCompiler.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeCXXCompiler.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeRCCompiler.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeRCInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\FindBoost.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-debug.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-release.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\FilesDirs\FilesDirsConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\Utilities\UtilitiesConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\YarpCommunicationConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Programas\CMake 2.8\bin\cmake.exe" -HD:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm -BD:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build --check-stamp-file D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/CMakeLists.txt;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\CMakeLists.txt;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeSystem.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeCCompiler.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeCXXCompiler.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeRCCompiler.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeRCInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\FindBoost.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-debug.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-release.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\FilesDirs\FilesDirsConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\Utilities\UtilitiesConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\YarpCommunicationConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Programas\CMake 2.8\bin\cmake.exe" -HD:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm -BD:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build --check-stamp-file D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/CMakeLists.txt;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\CMakeLists.txt;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeSystem.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeCCompiler.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeCXXCompiler.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeRCCompiler.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeRCInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\FindBoost.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-debug.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-release.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\FilesDirs\FilesDirsConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\Utilities\UtilitiesConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\YarpCommunicationConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Programas\CMake 2.8\bin\cmake.exe" -HD:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm -BD:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build --check-stamp-file D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/CMakeLists.txt;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\CMakeLists.txt;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeSystem.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeCCompiler.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeCXXCompiler.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\2.8.10.2\CMakeRCCompiler.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeRCInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\Programas\CMake 2.8\share\cmake-2.8\Modules\FindBoost.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-debug.cmake;C:\local\YARP\lib\YARP-2.3.61\YARP-release.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\FilesDirs\FilesDirsConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\Utilities\UtilitiesConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\YarpCommunication\cpp\YarpCommunicationConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\Libraries\CMakeScripts\CommonScripts.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfigVersion.cmake;C:\local\YARP\lib\YARP-2.3.61\YARPConfig.cmake;D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Gianpaolo\ARoS_ROS_interface_DEPS\AmtecLWArm\build\CMakeFiles\generate.stamp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Arm\ArmMovements.h" />
+    <ClInclude Include="..\Arm\ArmMovements_ARoS.h" />
+    <ClInclude Include="..\Arm\ArmMovements_Dumbo.h" />
+    <ClInclude Include="..\Arm\ArmMovements_Jumbo.h" />
+    <ClInclude Include="..\Arm\WrapperAmtecArm.h" />
+    <ClInclude Include="..\Communications\YarpCommunicationServerAmtecLWArm.h" />
+    <ClInclude Include="..\Core\ConsoleManagement.h" />
+    <ClInclude Include="..\Core\StdAfx.h" />
+    <ClInclude Include="..\..\Hardware\YARP_Modules\amtec_lwa_7dof\AmtecLWA7dof.h" />
+    <ClInclude Include="..\..\Hardware\YARP_Modules\amtec_lwa_7dof\Amtec_Definitions.h" />
+    <ClInclude Include="..\..\Hardware\YARP_Modules\amtec_lwa_7dof\common\m5apiw32.h" />
+    <ClInclude Include="..\..\Hardware\YARP_Modules\barrett_hand_826X\barrett_hand_826X.h" />
+    <ClInclude Include="..\..\Hardware\YARP_Modules\barrett_hand_826X\barrett_hand_definitions.h" />
+    <ClInclude Include="..\..\Hardware\YARP_Modules\serial_asio\serial_asio.h" />
+    <ClInclude Include="..\..\Hardware\YARP_Wrappers\Amtec_PStepServer\include\AmtecPStepServer.h" />
+    <ClCompile Include="..\Arm\ArmMovements.cpp"  />
+    <ClCompile Include="..\Arm\ArmMovements_ARoS.cpp"  />
+    <ClCompile Include="..\Arm\ArmMovements_Dumbo.cpp"  />
+    <ClCompile Include="..\Arm\ArmMovements_Jumbo.cpp"  />
+    <ClCompile Include="..\Arm\WrapperAmtecArm.cpp"  />
+    <ClCompile Include="..\Communications\YarpCommunicationServerAmtecLWArm.cpp"  />
+    <ClCompile Include="..\Core\AmtecLWArm.cpp"  />
+    <ClCompile Include="..\Core\ConsoleManagement.cpp"  />
+    <ClCompile Include="..\Core\StdAfx.cpp"  />
+    <ClCompile Include="..\..\Hardware\YARP_Modules\amtec_lwa_7dof\AmtecLWA7dof.cpp"  />
+    <ClCompile Include="..\..\Hardware\YARP_Modules\barrett_hand_826X\barrett_hand_826X.cpp"  />
+    <ClCompile Include="..\..\Hardware\YARP_Modules\serial_asio\serial_asio.cpp"  />
+    <ClCompile Include="..\..\Hardware\YARP_Wrappers\Amtec_PStepServer\src\AmtecPStepServer.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs/FilesDirs.vcxproj">
+      <Project>885C22A4-388D-422D-A295-952149C6EC1E</Project>
+    </ProjectReference>
+    <ProjectReference Include="D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/FilesDirs/MutexWrapper/MutexWrapper.vcxproj">
+      <Project>71E59921-7B4A-4A22-8986-85B9360B9196</Project>
+    </ProjectReference>
+    <ProjectReference Include="D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/Utilities/Utilities.vcxproj">
+      <Project>4BCBC3F0-4994-4156-A26C-93060970E5D6</Project>
+    </ProjectReference>
+    <ProjectReference Include="D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/YarpCommunication/YarpCommunication.vcxproj">
+      <Project>1CB15BB2-C73E-4988-AF74-7F791542006B</Project>
+    </ProjectReference>
+    <ProjectReference Include="D:/Gianpaolo/ARoS_ROS_interface_DEPS/AmtecLWArm/build/ZERO_CHECK.vcxproj">
+      <Project>14D4ABA1-80AD-4239-99AF-0A90AD56173E</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

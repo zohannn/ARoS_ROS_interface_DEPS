@@ -37,7 +37,7 @@
 //------------------------------------------------------------------------------
 
 #define DEFAULT_ARM_NAME	"/aros/lwa7dof_right"
-#define DEFAULT_CONF_FILE	"/Hardware/YARP_Wrappers/AmtecLWArm/config/amtec_aros_no_gripper_right.ini"
+#define DEFAULT_CONF_FILE	"../config/amtec_aros_no_gripper_right.ini"
 
 //------------------------------------------------------------------------------
 static bool end_execution = false;
