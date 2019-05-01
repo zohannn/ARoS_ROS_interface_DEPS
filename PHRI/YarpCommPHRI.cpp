@@ -334,8 +334,7 @@ void CYarpCommPHRI::Process( CMessage &msgIn, CMessage &msgOut, void *private_da
 							target[tar_num][2]=target[tar_num][2]-150;//-150 for aros  -65 for dumbo	
 							tar_num++;
 							if (tar_num>3) break;
-						}
-						
+						}						
 					}					
 					flag_all=1;		
 					break;	
