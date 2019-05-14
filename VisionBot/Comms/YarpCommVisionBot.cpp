@@ -69,10 +69,11 @@ void CYarpCommVisionBot::get_Position_ObjectType( int object, CMessage * msg )
 
 		pData->vObjects_Shared.Obj.at( object ).at( i ).get_Coordinates_World( &coord );
 
-		// Position X, Y, Z
-		msg->fData.emplace_back( coord.x / 10.0f );
-		msg->fData.emplace_back( coord.y / 10.0f );
-		msg->fData.emplace_back( coord.z / 10.0f );
+		// object type, X, Y, Z
+		msg->fData.emplace_back( object );
+		msg->fData.emplace_back( coord.x );
+		msg->fData.emplace_back( coord.y );
+		msg->fData.emplace_back( coord.z );
 	}
 
 	pData->vObjects_Shared.unlock();
@@ -104,7 +105,8 @@ void CYarpCommVisionBot::get_Orientation_ObjectType( int object, CMessage * msg 
 
 		pData->vObjects_Shared.Obj.at( object ).at( i ).get_Orientation( &ori );
 
-		// Orientation Phi, Psi, Theta
+		// object type, Phi, Psi, Theta
+		msg->fData.emplace_back( object );
 		msg->fData.emplace_back( ori.z );
 		msg->fData.emplace_back( ori.y );
 		msg->fData.emplace_back( ori.x );
