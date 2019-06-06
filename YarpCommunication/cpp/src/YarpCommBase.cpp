@@ -98,8 +98,7 @@ bool CYarpCommBase::open( void )
 		if( _bSuccess ) {
 			yarp::os::Network::unregisterName( strPortName.c_str() );
 		}
-	}
-	catch( std::string &str ) {
+	}catch( std::string &str ) {
 		std::cout << "Exception: " << str << "." << std::endl;
 		strError = str;
 		_bOpened = false;

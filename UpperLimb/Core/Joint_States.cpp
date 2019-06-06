@@ -9,6 +9,8 @@ Joint_States::Joint_States(const Joint_States & other)
 {
 	position = other.position;
 	velocity = other.velocity;
+	velocity_der = other.velocity_der;
+	acceleration_der = other.acceleration_der;
 	//end_effector_state = other.end_effector_state;
 }
 
@@ -44,9 +46,14 @@ bool Joint_States::read(yarp::os::ConnectionReader& connection) {
 	size_t joints_nr = static_cast<size_t>(connection.expectInt());
 	position.resize(joints_nr);
 	velocity.resize(joints_nr);
+	velocity_der.resize(joints_nr);
+	acceleration_der.resize(joints_nr);
 
-	for (size_t i = 0; i < position.size(); i++)
+	for (size_t i = 0; i < position.size(); i++){
 		position[i] = static_cast<float>(connection.expectDouble());
+		velocity_der[i] = 0.0;
+		acceleration_der[i] = 0.0;
+	}
 
 	for (size_t i = 0; i < velocity.size(); i++)
 		velocity[i] = static_cast<float>(connection.expectDouble());
