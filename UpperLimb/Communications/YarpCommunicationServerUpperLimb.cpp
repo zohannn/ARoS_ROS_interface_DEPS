@@ -251,6 +251,7 @@ void CYarpCommunicationServerUpperLimb::stop_joints_states_sender()
 
 void CYarpCommunicationServerUpperLimb::joint_states_job()
 {
+	float time_step = 10; // ms
 	while (!joint_states_out_worker_end_job)
 	{
 
@@ -264,22 +265,24 @@ void CYarpCommunicationServerUpperLimb::joint_states_job()
 				// lock the mutex variables
 				boost::unique_lock<boost::mutex> lck_hand(mutex_barrett); 
 				if(!hand->rt_mode_on){
-					boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
 					modules_ok = hand->startRTmode();
+					boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
 				}
+				double dArray[4]; //std::vector<float> hand_pos(4,1);
+				if(hand->rt_mode_on){modules_ok = hand->getRTPositions(dArray);}
+				if (!modules_ok)
+					throw std::string("Failed to get the hand current positions!");
 
 				// positions
 				modules_ok = arm->getPosAll(joints_values.position.data());
 				if (!modules_ok)
 						throw std::string("Failed to get the arm current positions!");
 
-				double dArray[4]; //std::vector<float> hand_pos(4,1);
 
 				//modules_ok = hand->startRTmode(); 
 				//std::vector<double> hand_v(4,-7*DEG_TO_RAD_F); std::vector<double> hand_v_0(4,0);
 				//double hand_v_r[4];
-
-				if(hand->rt_mode_on){modules_ok = hand->getRTPositions(dArray);}
+							
 
 				/*
 				float vel_0; arm->getMaxVelLimit(0,&vel_0);
@@ -327,8 +330,7 @@ void CYarpCommunicationServerUpperLimb::joint_states_job()
 				//modules_ok = hand->stopRTmode();
 			
 
-				if (!modules_ok)
-					throw std::string("Failed to get the hand current positions!");
+
 				////move spread to end of array
 				//std::rotate(dArray, dArray + 1, dArray + 4);
 				//for (int i = 0; i < 4; i++)
@@ -391,10 +393,13 @@ void CYarpCommunicationServerUpperLimb::joint_states_job()
 				joint_states_out_channel.write();
 			}
 		//} // if NOT executing vel movement
+		boost::this_thread::sleep(boost::posix_time::milliseconds(time_step));
 		
 	}// while loop
 	
-	boost::unique_lock<boost::mutex> lck_hand(mutex_barrett); hand->stopRTmode();
+	boost::unique_lock<boost::mutex> lck_hand(mutex_barrett); 
+	hand->stopRTmode();
+	boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
 	//BOOST_LOG_SEV(lg, boost::log::trivial::info) << "Ended joint_states thread.";
 	//std::cout << "joint_states thread has finished." << std::endl;
 }
