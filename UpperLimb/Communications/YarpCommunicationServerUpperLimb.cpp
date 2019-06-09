@@ -1346,7 +1346,7 @@ void CYarpCommunicationServerUpperLimb::VelTrajectoryMovementsExecutor()
 
 					MoveVel(j_vel_x);
 
-					/*
+					
 					// read the positions and the velocities
 					joints_values.position.resize(nr_joints);	joints_values.velocity.resize(nr_joints);
 					// arm positions
@@ -1354,16 +1354,18 @@ void CYarpCommunicationServerUpperLimb::VelTrajectoryMovementsExecutor()
 					arm->getPosAll(joints_values.position.data());	//if (!modules_ok){break;}
 					//hand positions
 					//modules_ok =
-					hand->getRTPositions(dArray);	//if (!modules_ok){break;}
-					std::vector<float> hand_pos(dArray,dArray+4);
+					//hand->getRTPositions(dArray);	//if (!modules_ok){break;}
+					//std::vector<float> hand_pos(dArray,dArray+4);
+					std::vector<float> hand_pos(4,0);
 					std::transform(hand_pos.begin(),hand_pos.end(),hand_pos.begin(),std::bind1st(std::multiplies<float>(),DEG_TO_RAD_F));
 					std::copy(hand_pos.begin(), hand_pos.end(), joints_values.position.begin() + arm_nr_joints);
 
 					// arm velocities
 					arm->getVelAll(joints_values.velocity.data());	//if (!modules_ok){break;}
 					// hand velocities
-					hand->getRTVelocities(dArrayVel);	//if (!modules_ok){break;}
-					std::vector<float> hand_vel(dArrayVel,dArrayVel+4);
+					//hand->getRTVelocities(dArrayVel);	//if (!modules_ok){break;}
+					//std::vector<float> hand_vel(dArrayVel,dArrayVel+4);
+					std::vector<float> hand_vel(4,0);
 					std::transform(hand_vel.begin(),hand_vel.end(),hand_vel.begin(),std::bind1st(std::multiplies<float>(),DEG_TO_RAD_F));
 					std::copy(hand_vel.begin(), hand_vel.end(), joints_values.velocity.begin() + arm_nr_joints);
 
@@ -1372,7 +1374,8 @@ void CYarpCommunicationServerUpperLimb::VelTrajectoryMovementsExecutor()
 					joint_states_queue.push(boost::move(joints_values));
 					//notify that we have pushed data into queue
 					joint_states_queue_cv.notify_one();
-					*/
+					
+					
 
 					tx = boost::chrono::system_clock::now() - t_start_interval;
 					//tx = boost::chrono::high_resolution_clock::now() - t_start_interval;	
