@@ -212,7 +212,7 @@ public:
 	// Set positions of the joints
 	void MovePos( std::vector<float> fData );
 	// Set velocities of the joints
-	void MoveVel( std::vector<float>& fData );
+	void MoveVel( std::vector<float>& fData, double* hand_pos, double* hand_vel );
 	// Wait the end of the trajectory
 	int WaitTrajectoryEnd(int timeout_ms);
 	// Wait the end of the trajectory

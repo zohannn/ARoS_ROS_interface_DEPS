@@ -189,7 +189,7 @@ bool yarp::dev::BarrettHand826X::startRTmode()
 
 		std::string set_fingers;
 		//F1
-		set_fingers = "1FSET LCV 1 LCVC 20 LCPG 1 LFV 1 LFVC 1 LFS 0 LFAP 1 LFDP 0 LFDPC 1\r";
+		set_fingers = "1FSET LCV 1 LCVC 1 LCPG 1 LFV 1 LFVC 1 LFS 0 LFAP 1 LFDP 0 LFDPC 1\r";
 		boost::asio::write(*serial_dev,boost::asio::buffer(set_fingers.c_str(),set_fingers.size()));
 		bytes_transfered = boost::asio::read_until(*serial_dev, in_buf, "=> ");	
 		in_str.resize(bytes_transfered);
@@ -199,7 +199,7 @@ bool yarp::dev::BarrettHand826X::startRTmode()
 		in_buf.consume(bytes_transfered);	
 
 		//F2
-		set_fingers = "2FSET LCV 1 LCVC 20 LCPG 1 LFV 1 LFVC 1 LFS 0 LFAP 1 LFDP 0 LFDPC 1\r";
+		set_fingers = "2FSET LCV 1 LCVC 1 LCPG 1 LFV 1 LFVC 1 LFS 0 LFAP 1 LFDP 0 LFDPC 1\r";
 		boost::asio::write(*serial_dev,boost::asio::buffer(set_fingers.c_str(),set_fingers.size()));
 		bytes_transfered = boost::asio::read_until(*serial_dev, in_buf, "=> ");	
 		in_str.resize(bytes_transfered);
@@ -209,7 +209,7 @@ bool yarp::dev::BarrettHand826X::startRTmode()
 		in_buf.consume(bytes_transfered);
 
 		//F3
-		set_fingers = "3FSET LCV 1 LCVC 20 LCPG 1 LFV 1 LFVC 1 LFS 0 LFAP 1 LFDP 0 LFDPC 1\r";
+		set_fingers = "3FSET LCV 1 LCVC 1 LCPG 1 LFV 1 LFVC 1 LFS 0 LFAP 1 LFDP 0 LFDPC 1\r";
 		boost::asio::write(*serial_dev,boost::asio::buffer(set_fingers.c_str(),set_fingers.size()));
 		bytes_transfered = boost::asio::read_until(*serial_dev, in_buf, "=> ");	
 		in_str.resize(bytes_transfered);
@@ -317,20 +317,20 @@ bool yarp::dev::BarrettHand826X::getRTVelocities(double *vel)
 		int curr_pos[4]; int curr_vel[4];
 		// F1
 		curr_vel[0] = static_cast<int>(in_str.at(1));
-		vel[0] = static_cast<double>(curr_vel[0]*BHAND_RATIO_140_17800/1000);// to deg/sec
+		vel[0] = static_cast<double>(curr_vel[0]*BHAND_RATIO_140_17800*BHAND_RATIO_N_sec);// to deg/sec
 		curr_pos[0] = static_cast<int>(in_str.at(2) << 8) + static_cast<int>((unsigned char)in_str.at(3));
 		// F2
 		curr_vel[1] = static_cast<int>(in_str.at(4));
 		curr_pos[1] = static_cast<int>(in_str.at(5) << 8) + static_cast<int>((unsigned char)in_str.at(6));
-		vel[1] = static_cast<double>(curr_vel[1]*BHAND_RATIO_140_17800/1000); // to deg/sec
+		vel[1] = static_cast<double>(curr_vel[1]*BHAND_RATIO_140_17800*BHAND_RATIO_N_sec); // to deg/sec
 		// F3
 		curr_vel[2] = static_cast<int>(in_str.at(7));
 		curr_pos[2] = static_cast<int>(in_str.at(8) << 8) + static_cast<int>((unsigned char)in_str.at(9));
-		vel[2] = static_cast<double>(curr_vel[2]*BHAND_RATIO_140_17800/1000); // to deg/sec
+		vel[2] = static_cast<double>(curr_vel[2]*BHAND_RATIO_140_17800*BHAND_RATIO_N_sec); // to deg/sec
 		// S
 		curr_vel[3] = static_cast<int>(in_str.at(10));
 		curr_pos[3] = static_cast<int>(in_str.at(11) << 8) + static_cast<int>((unsigned char)in_str.at(12));
-		vel[3] = static_cast<double>(curr_vel[3]*BHAND_RATIO_140_17800/1000); // to deg/sec
+		vel[3] = static_cast<double>(curr_vel[3]*BHAND_RATIO_180_3150*BHAND_RATIO_N_sec); // to deg/sec
 
 		// from F1 F2 F3 S
 		//swap to   S F1 F2 F3
@@ -340,6 +340,8 @@ bool yarp::dev::BarrettHand826X::getRTVelocities(double *vel)
 		vel[2] = vel[1];
 		vel[1] = vel[0];
 		vel[0] = temp;
+
+		//std::cout << "vel: " << vel[1] << std::endl;
 
 
 	}
@@ -383,6 +385,7 @@ bool yarp::dev::BarrettHand826X::getRTPositions(double *pos)
 	
 
 		int curr_pos[4]; int curr_vel[4];
+
 		// F1
 		curr_vel[0] = static_cast<int>(in_str.at(1));
 		curr_pos[0] = static_cast<int>(in_str.at(2) << 8) + static_cast<int>((unsigned char)in_str.at(3));
@@ -395,6 +398,7 @@ bool yarp::dev::BarrettHand826X::getRTPositions(double *pos)
 		// S
 		curr_vel[3] = static_cast<int>(in_str.at(10));
 		curr_pos[3] = static_cast<int>(in_str.at(11) << 8) + static_cast<int>((unsigned char)in_str.at(12));
+
 
 		pos[0] = static_cast<double>(curr_pos[0])*BHAND_RATIO_140_17800; // to deg
 		pos[1] = static_cast<double>(curr_pos[1])*BHAND_RATIO_140_17800; // to deg
@@ -410,6 +414,8 @@ bool yarp::dev::BarrettHand826X::getRTPositions(double *pos)
 		pos[1] = pos[0];
 		pos[0] = temp;
 
+		//std::cout << "pos: " << pos[1] << std::endl;
+
 	}
 	catch(std::string &ex){
 
@@ -421,18 +427,21 @@ bool yarp::dev::BarrettHand826X::getRTPositions(double *pos)
 	return true;
 }
 
-bool yarp::dev::BarrettHand826X::setRTVelocities(const std::vector<double>& vel)
+bool yarp::dev::BarrettHand826X::setRTVelocities(const std::vector<double>& vel,double* pos,double* vel_out)
 {
-
-	//try
-	//{
+	// vel is in rad/sec
+	//std::cout << "vel: " << vel.at(1) << std::endl;
+	try
+	{
 		boost::shared_ptr<boost::asio::serial_port> serial_dev;
 		//boost::asio::streambuf out_buf;
 		boost::asio::streambuf in_buf; 
-		//std::string in_str;
-		//std::string err("ERR");
-
-		//size_t bytes_transfered;
+		std::string in_str;
+		std::string err("ERR");
+		size_t bytes_transfered=0;
+		//expression to wait for
+		//either *xxxxxxxx or \n\rERR xxxx
+		boost::regex rt_feedback_reg("\\*.{12}|\\n\\rERR (\\d+)\\n\\r=> ");
 
 		//get the low level device.
 		serial_dev = serial_port.GetSerialPortDevice();
@@ -441,37 +450,40 @@ bool yarp::dev::BarrettHand826X::setRTVelocities(const std::vector<double>& vel)
 		//   F1   F2  F3  S
 		//   1+1 1+1 1+1 1+1  = 8 bytes
 		boost::array<char,9> out_buffer;
-		out_buffer[0]='c';
+		out_buffer[0]='C';
 
 		// send the command to set the velocities
 		//   F1   F2  F3  S
 		//   1	1 1 1  = 4 bytes
-		//boost::array<char,5> out_buffer;
-		//out_buffer[0]='c';
+		//double vel_max = 20; // deg/sec
 
 		
 		char ref_vel[8];
 		// velocity value + proportional gain
-		if(vel.at(1)*RAD_TO_DEG_F < 0.0 && vel.at(1)*RAD_TO_DEG_F > -8.0)
-			ref_vel[0] = static_cast<int>(std::ceil(-8.0*BHAND_RATIO_17800_140/1000));
-		else
-			ref_vel[0] = static_cast<int>(std::ceil(vel.at(1)*RAD_TO_DEG_F*BHAND_RATIO_17800_140/1000)); 		
-		ref_vel[1] = getGainVelocity(vel.at(1)*RAD_TO_DEG_F); 
-		if(vel.at(2)*RAD_TO_DEG_F < 0.0 && vel.at(2)*RAD_TO_DEG_F > -8.0)
-			ref_vel[2] = static_cast<int>(std::ceil(-8.0*BHAND_RATIO_17800_140/1000)); 
-		else
-			ref_vel[2] = static_cast<int>(std::ceil(vel.at(2)*RAD_TO_DEG_F*BHAND_RATIO_17800_140/1000)); 
-		if (vel.at(2) <= 0)
-			ref_vel[3] = getGainVelocity(vel.at(2)*RAD_TO_DEG_F)+7; 
-		else
-			ref_vel[3] = getGainVelocity(vel.at(2)*RAD_TO_DEG_F)+4; 
-		if(vel.at(3)*RAD_TO_DEG_F < 0.0 && vel.at(3)*RAD_TO_DEG_F > -8.0)
-			ref_vel[4] = static_cast<int>(std::ceil(-8.0*BHAND_RATIO_17800_140/1000));
-		else
-			ref_vel[4] = static_cast<int>(std::ceil(vel.at(3)*RAD_TO_DEG_F*BHAND_RATIO_17800_140/1000)); 
-		ref_vel[5] = getGainVelocity(vel.at(3)*RAD_TO_DEG_F); 			
+		//if(vel.at(1)*RAD_TO_DEG_F < 0.0 && vel.at(1)*RAD_TO_DEG_F > -vel_max)
+			//ref_vel[0] = static_cast<int>(std::ceil(-vel_max*BHAND_RATIO_17800_140));
+		//else
+		ref_vel[0] = static_cast<int>(std::ceil(vel.at(1)*RAD_TO_DEG_F*BHAND_RATIO_CVel_degs)); 		
+		//ref_vel[1] = getGainVelocity(vel.at(1)*RAD_TO_DEG_F);
+		ref_vel[1] = 80; 
+		//if(vel.at(2)*RAD_TO_DEG_F < 0.0 && vel.at(2)*RAD_TO_DEG_F > -vel_max)
+			//ref_vel[2] = static_cast<int>(std::ceil(-vel_max*BHAND_RATIO_17800_140)); 
+		//else
+		ref_vel[2] = static_cast<int>(std::ceil(vel.at(2)*RAD_TO_DEG_F*BHAND_RATIO_CVel_degs)); 
+		//if (vel.at(2) <= 0)
+		//	ref_vel[3] = getGainVelocity(vel.at(2)*RAD_TO_DEG_F)+7; 
+		//else
+		//ref_vel[3] = getGainVelocity(vel.at(2)*RAD_TO_DEG_F); 
+		ref_vel[3] = 100;
+		//if(vel.at(3)*RAD_TO_DEG_F < 0.0 && vel.at(3)*RAD_TO_DEG_F > -vel_max)
+			//ref_vel[4] = static_cast<int>(std::ceil(-vel_max*BHAND_RATIO_17800_140));
+		//else
+		ref_vel[4] = static_cast<int>(std::ceil(vel.at(3)*RAD_TO_DEG_F*BHAND_RATIO_CVel_degs)); 
+		//ref_vel[5] = getGainVelocity(vel.at(3)*RAD_TO_DEG_F); 
+		ref_vel[5] = 80; 
 		//ref_vel[6] = static_cast<int>(std::ceil(vel.at(0)*RAD_TO_DEG_F*BHAND_RATIO_17800_140/1000)); ref_vel[7] = 30; //S //TO DO Gain control
-		ref_vel[6] = static_cast<int>(std::ceil(0.0*RAD_TO_DEG_F*BHAND_RATIO_17800_140/1000)); ref_vel[7] = 30; //S //TO DO Gain control
+		ref_vel[6] = static_cast<int>(std::ceil(0.0*RAD_TO_DEG_F*BHAND_RATIO_CVel_degs)); 
+		ref_vel[7] = 70; //S 
 			
 		//ref_vel[0] = static_cast<int>(std::ceil(vel.at(1)*RAD_TO_DEG_F)); //ref_vel[1] = 40; 
 		//ref_vel[1] = getGainVelocity(vel.at(1)*RAD_TO_DEG_F); //F1
@@ -483,37 +495,67 @@ bool yarp::dev::BarrettHand826X::setRTVelocities(const std::vector<double>& vel)
 		//ref_vel[6] = static_cast<int>(std::ceil(0.0*RAD_TO_DEG_F)); ref_vel[7] = 30; //S //TO DO Gain control		
 		std::copy_n(ref_vel,8,out_buffer.begin()+1);
 		
-		/*
-		char ref_vel[4];
-		// velocity value + proportional gain
-		ref_vel[0] = vel.at(0); //F1
-		ref_vel[1] = vel.at(1); //F2
-		ref_vel[2] = vel.at(2); //F3
-		ref_vel[3] = 0; //S
-		std::copy_n(ref_vel,4,out_buffer.begin()+1);
-		*/
+		// send
+		//boost::asio::async_write(*serial_dev, boost::asio::buffer(out_buffer),
+		//	boost::bind(&yarp::dev::BarrettHand826X::serial_write_handler,this,
+		//				boost::asio::placeholders::error,
+		//				boost::asio::placeholders::bytes_transferred));
+		boost::asio::write(*serial_dev, boost::asio::buffer(out_buffer));
+				
+		// wait for feedback
+		bytes_transfered = boost::asio::read_until(*serial_dev, in_buf, rt_feedback_reg);	
+		in_str.resize(bytes_transfered);
+		in_buf.sgetn(&in_str.front(), bytes_transfered);
+		if(in_str.find(err)!=std::string::npos)
+			throw std::string("Error received from BarretHand. Controller in now running in Supervisory mode.");
 
-		//boost::asio::write(*serial_dev, boost::asio::buffer(out_buffer));
-		
-		boost::asio::async_write(*serial_dev, boost::asio::buffer(out_buffer),
-			boost::bind(&yarp::dev::BarrettHand826X::serial_write_handler,this,
-						boost::asio::placeholders::error,
-						boost::asio::placeholders::bytes_transferred));
-						
+		int curr_pos[4]; int curr_vel[4];
 
-		//bytes_transfered = 
-		//boost::asio::read_until(*serial_dev, in_buf, "*");
-		//in_str.resize(bytes_transfered);
-		//in_buf.sgetn(&in_str.front(), bytes_transfered);
-		//if(in_str.find(err)!=std::string::npos)
-			//throw std::string("Error received from BarretHand. Controller in now running in Supervisory mode.");
+		// F1
+		curr_vel[0] = static_cast<int>(in_str.at(1));
+		vel_out[0] = static_cast<double>(curr_vel[0]*BHAND_RATIO_140_17800*BHAND_RATIO_N_sec);// to deg/sec
+		curr_pos[0] = static_cast<int>(in_str.at(2) << 8) + static_cast<int>((unsigned char)in_str.at(3));
+		// F2
+		curr_vel[1] = static_cast<int>(in_str.at(4));
+		vel_out[1] = static_cast<double>(curr_vel[1]*BHAND_RATIO_140_17800*BHAND_RATIO_N_sec);// to deg/sec
+		curr_pos[1] = static_cast<int>(in_str.at(5) << 8) + static_cast<int>((unsigned char)in_str.at(6));
+		// F3
+		curr_vel[2] = static_cast<int>(in_str.at(7));
+		vel_out[2] = static_cast<double>(curr_vel[2]*BHAND_RATIO_140_17800*BHAND_RATIO_N_sec);// to deg/sec
+		curr_pos[2] = static_cast<int>(in_str.at(8) << 8) + static_cast<int>((unsigned char)in_str.at(9));
+		// S
+		curr_vel[3] = static_cast<int>(in_str.at(10));
+		vel_out[3] = static_cast<double>(curr_vel[3]*BHAND_RATIO_140_17800*BHAND_RATIO_N_sec);// to deg/sec
+		curr_pos[3] = static_cast<int>(in_str.at(11) << 8) + static_cast<int>((unsigned char)in_str.at(12));
 
-	//}
-	//catch(std::string &ex){
 
-		//std::cout << "Hand error in RT mode: " << ex << std::endl;
-		//return false;
-	//}
+		pos[0] = static_cast<double>(curr_pos[0])*BHAND_RATIO_140_17800; // to deg
+		pos[1] = static_cast<double>(curr_pos[1])*BHAND_RATIO_140_17800; // to deg
+		pos[2] = static_cast<double>(curr_pos[2])*BHAND_RATIO_140_17800; // to deg
+		pos[3] = static_cast<double>(curr_pos[3])*BHAND_RATIO_180_3150; // to deg // S
+
+		// from F1 F2 F3 S
+		//swap to   S F1 F2 F3
+		double temp;
+		temp = vel_out[3];
+		vel_out[3] = vel_out[2];
+		vel_out[2] = vel_out[1];
+		vel_out[1] = vel_out[0];
+		vel_out[0] = temp;
+
+		temp = pos[3];
+		pos[3] = pos[2];
+		pos[2] = pos[1];
+		pos[1] = pos[0];
+		pos[0] = temp;
+
+		//std::cout << "pos: " << pos[1] << std::endl;
+
+	}catch(std::string &ex){
+
+		std::cout << "Hand error in RT mode: " << ex << std::endl;
+		return false;
+	}
 
 	return true;
 }
@@ -530,28 +572,29 @@ void yarp::dev::BarrettHand826X::serial_write_handler(const boost::system::error
 int yarp::dev::BarrettHand826X::getGainVelocity(double vel)
 {
 	//double v = std::abs(vel); // deg/sec
-
+	return 70;
+	/*
 	if (vel>=0){
 		if(vel < 8.0)
 		{
 			//return 46 + static_cast<int>(std::ceil(v));
 		
 			if(vel <= 1.1 )
-				return 30;
+				return 60;
 			else if( vel <= 2.1)
-				return 30;
+				return 60;
 			else if( vel<= 3.1)
-				return 30;
+				return 60;
 			else if( vel <= 4.1)
-				return 35;
+				return 70;
 			else if( vel <= 5.1)
-				return 40;
+				return 80;
 			else if ( vel<= 6.1)
-				return 30;
+				return 60;
 			else if ( vel<= 7.1)
-				return 20;
+				return 40;
 			else if(vel<=8.1)
-				return 20;
+				return 40;
 			
 				//return static_cast<int>(std::ceil(16*exp(-0.063583*v)));
 				//return static_cast<int>(std::ceil(200*exp(-0.670360*v)));
@@ -559,31 +602,32 @@ int yarp::dev::BarrettHand826X::getGainVelocity(double vel)
 		}else{
 			//return static_cast<int>(15.563*exp(-0.063583*v)+0.5);
 			//return static_cast<int>(16*exp(-0.063583*v)+0.5);
-			return 20;
+			return 40;
 		}
 	}else{
 		//return 35; 
 		
 		if(vel < -10.1)
 		{
-			return 30; 
+			return 250; 
 		}else if(vel > -2.01){
-			return 25;
+			return 205;
 			//return 35;
 		}else if(vel > -5.01){
-			return 30; 
+			return 200; 
 		}else{
-			return 45;
+			return 2605;
 		}
 		
 	}
-	/*
-	if(v<=2.0)
-	{
-		return static_cast<int>(std::ceil(200*exp(-0.670360*v)));
-	}else{
-		return static_cast<int>(std::ceil(16*exp(-0.063583*v)));
-	}
+	
+	//if(v<=2.0)
+	//{
+	//	return static_cast<int>(std::ceil(200*exp(-0.670360*v)));
+	//}else{
+	//	return static_cast<int>(std::ceil(16*exp(-0.063583*v)));
+	//}
+	
 	*/
 	
 }

@@ -116,7 +116,7 @@ public:
 	* @param  vel [1,2,3], spread
 	* @return true/false on success/failure
 	*/
-	bool setRTVelocities(const std::vector<double>& vel);
+	bool setRTVelocities(const std::vector<double>& vel,double* pos,double* vel_out);
 
 	int getGainVelocity(double vel);
 

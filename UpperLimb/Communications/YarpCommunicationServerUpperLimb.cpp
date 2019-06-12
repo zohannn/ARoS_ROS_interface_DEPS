@@ -393,7 +393,7 @@ void CYarpCommunicationServerUpperLimb::joint_states_job()
 				joint_states_out_channel.write();
 			}
 		//} // if NOT executing vel movement
-		boost::this_thread::sleep(boost::posix_time::milliseconds(time_step));
+		//boost::this_thread::sleep(boost::posix_time::milliseconds(time_step));
 		
 	}// while loop
 	
@@ -564,7 +564,25 @@ void CYarpCommunicationServerUpperLimb::Process( CMessage &msgIn, CMessage &msgO
 			{
 				boost::unique_lock<boost::mutex> lck_hand(mutex_barrett); 
 				if(!hand->rt_mode_on){hand->startRTmode();}
-				MoveVel( msgIn.fData );
+				// move the upperlimb
+				double dArrayPos[4]; double dArrayVel[4]; MoveVel( msgIn.fData, dArrayPos, dArrayVel);
+				Joint_States joints_values;
+				joints_values.position.resize(nr_joints);	joints_values.velocity.resize(nr_joints);
+				// positions
+				arm->getPosAll(joints_values.position.data());	
+				std::vector<float> hand_pos(dArrayPos,dArrayPos+4);
+				std::transform(hand_pos.begin(),hand_pos.end(),hand_pos.begin(),std::bind1st(std::multiplies<float>(),DEG_TO_RAD_F));
+				std::copy(hand_pos.begin(), hand_pos.end(), joints_values.position.begin() + arm_nr_joints);
+				// velocities
+				arm->getVelAll(joints_values.velocity.data());	
+				std::vector<float> hand_vel(dArrayVel,dArrayVel+4);
+				std::transform(hand_vel.begin(),hand_vel.end(),hand_vel.begin(),std::bind1st(std::multiplies<float>(),DEG_TO_RAD_F));
+				std::copy(hand_vel.begin(), hand_vel.end(), joints_values.velocity.begin() + arm_nr_joints);
+				//push the joint states
+				boost::unique_lock<boost::mutex> lck(joint_states_queue_mtx);
+				joint_states_queue.push(boost::move(joints_values));
+				//notify that we have pushed data into queue
+				joint_states_queue_cv.notify_one();				
 			}
 			break;
 
@@ -735,7 +753,7 @@ void CYarpCommunicationServerUpperLimb::StopClearTrajectory()
 	stop_vel_movement = true;
 }
 
-void CYarpCommunicationServerUpperLimb::MoveVel( std::vector<float>& data )
+void CYarpCommunicationServerUpperLimb::MoveVel( std::vector<float>& data , double* hand_pos, double* hand_vel)
 {
 	//size_t vSize = fData.size();
 	std::vector<double> arm_joints(arm_nr_joints);
@@ -762,9 +780,9 @@ void CYarpCommunicationServerUpperLimb::MoveVel( std::vector<float>& data )
 	//{
 	//bool arm_cmd_ok = arm->velocityMove(&arm_joints[0]);
 	//bool hand_cmd_ok = hand->setRTVelocities(hand_joints);
-	if (!arm->velocityMove(&arm_joints[0]) || !hand->setRTVelocities(hand_joints))
+	if (!arm->velocityMove(&arm_joints[0]) || !hand->setRTVelocities(hand_joints,hand_pos,hand_vel))
 	//if (!arm->velocityMove(&arm_joints[0]))
-	//if(!hand->setRTVelocities(hand_joints))
+	//if(!hand->setRTVelocities(hand_joints,hand_pos,hand_vel))
 		throw std::string("Failed to execute the arm/hand motion in velocity mode!");
 	//}
 	//delete[] joints;
@@ -1301,7 +1319,7 @@ void CYarpCommunicationServerUpperLimb::VelTrajectoryMovementsExecutor()
 			std::vector<float> j_acc_mean;
 			std::vector<float> j_vel_x;
 			bool modules_ok;
-			double dArray[4]; //std::vector<float> hand_pos(4,1);
+			double dArrayPos[4]; //std::vector<float> hand_pos(4,1);
 			double dArrayVel[4]; //std::vector<float> hand_vel(4,0);
 			Joint_States joints_values;
 
@@ -1344,7 +1362,7 @@ void CYarpCommunicationServerUpperLimb::VelTrajectoryMovementsExecutor()
 					for(int ii=0;ii<j_acc_mean.size();++ii)
 						j_vel_x.at(ii) = (j_vel_a.at(ii)+(j_acc_mean.at(ii)*tx.count()));
 
-					MoveVel(j_vel_x);
+					MoveVel(j_vel_x,dArrayPos,dArrayVel);
 
 					
 					// read the positions and the velocities
@@ -1355,8 +1373,8 @@ void CYarpCommunicationServerUpperLimb::VelTrajectoryMovementsExecutor()
 					//hand positions
 					//modules_ok =
 					//hand->getRTPositions(dArray);	//if (!modules_ok){break;}
-					//std::vector<float> hand_pos(dArray,dArray+4);
-					std::vector<float> hand_pos(4,0);
+					std::vector<float> hand_pos(dArrayPos,dArrayPos+4);
+					//std::vector<float> hand_pos(4,0);
 					std::transform(hand_pos.begin(),hand_pos.end(),hand_pos.begin(),std::bind1st(std::multiplies<float>(),DEG_TO_RAD_F));
 					std::copy(hand_pos.begin(), hand_pos.end(), joints_values.position.begin() + arm_nr_joints);
 
@@ -1364,8 +1382,8 @@ void CYarpCommunicationServerUpperLimb::VelTrajectoryMovementsExecutor()
 					arm->getVelAll(joints_values.velocity.data());	//if (!modules_ok){break;}
 					// hand velocities
 					//hand->getRTVelocities(dArrayVel);	//if (!modules_ok){break;}
-					//std::vector<float> hand_vel(dArrayVel,dArrayVel+4);
-					std::vector<float> hand_vel(4,0);
+					std::vector<float> hand_vel(dArrayVel,dArrayVel+4);
+					//std::vector<float> hand_vel(4,0);
 					std::transform(hand_vel.begin(),hand_vel.end(),hand_vel.begin(),std::bind1st(std::multiplies<float>(),DEG_TO_RAD_F));
 					std::copy(hand_vel.begin(), hand_vel.end(), joints_values.velocity.begin() + arm_nr_joints);
 
@@ -1384,9 +1402,9 @@ void CYarpCommunicationServerUpperLimb::VelTrajectoryMovementsExecutor()
 			}// for loop each step
 
 			// stop the motion
-			std::vector<float>j_vel_0(nr_joints,0.0);	MoveVel(j_vel_0);														
+			std::vector<float>j_vel_0(nr_joints,0.0);	MoveVel(j_vel_0,dArrayPos,dArrayVel);														
 														
-			//signal that this trajectory was finished
+			//signal that this trajectory has finished
 			executing_vel_movement_error = false;
 			executing_vel_movement = false;
 			executing_vel_movement_cv.notify_all();
