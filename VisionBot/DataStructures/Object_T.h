@@ -84,6 +84,9 @@ protected:
 		Coord_World,
 		/// <summary>(x,y,z) orientation in the world reference frame.</summary>	
 		Orientation;
+	std::vector<std::vector<float>> 
+		/// <summary>[x_v y_v z_v] orientation matrix in the world reference frame.</summary>
+		Orientation_matrix;
 		
 	/// <summary>Pan and Tilt angles necessary for to ARoS look at it.</summary>	
 	cv::Point_<T> PanTilt;
@@ -252,6 +255,11 @@ public:
 	{
 		Orientation = pOri;
 	};
+
+	void set_Orientation_matrix( std::vector<std::vector<float>>& or_mat )
+	{
+		Orientation_matrix = or_mat;
+	};
 	
 	void get_Orientation( T * pXAngle, T * pYAngle, T * pZAngle )
 	{
@@ -263,6 +271,11 @@ public:
 	void get_Orientation( cv::Point3_<T> * pOri )
 	{
 		*pOri = Orientation;
+	};
+
+	void get_Orientation_matrix( std::vector<std::vector<float>>& or_mat )
+	{
+		or_mat = Orientation_matrix;
 	};
 
 	void set_PanTiltAngles( cv::Point_<T> pPanTilt )
@@ -441,6 +454,7 @@ protected:
 		dst->Coord_Vision = src->Coord_Vision;
 		dst->Coord_World = src->Coord_World;
 		dst->Orientation = src->Orientation;
+		dst->Orientation_matrix = src->Orientation_matrix;
 		dst->Region = src->Region;
 		dst->RoI = src->RoI;
 		dst->Colour_Primary = src->Colour_Primary;

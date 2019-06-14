@@ -32,6 +32,8 @@ public:
 
 	bool SearchObjects_Auxiliary( void );
 
+	void AbsoluteOrientation( cv::Point3f point_main, std::vector<std::vector<float>>& or_mat );
+
 	//--------------------------------------------------------------------------
 public:	
 	virtual void ObjectPreProcessing( void );
