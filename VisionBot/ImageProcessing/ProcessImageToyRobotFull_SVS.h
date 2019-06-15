@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <numeric>
 #include "ProcessImage.h"
 #include "GestureClassifier.h"
 
@@ -32,7 +33,8 @@ public:
 
 	bool SearchObjects_Auxiliary( void );
 
-	void AbsoluteOrientation( cv::Point3f point_main, std::vector<std::vector<float>>& or_mat );
+	bool AbsoluteOrientation( cv::Point3f point_main, cv::Point3f point_small, cv::Point3f point_big,
+									std::vector<std::vector<float>>& or_mat );
 
 	//--------------------------------------------------------------------------
 public:	
@@ -51,6 +53,9 @@ protected:
 
 	void Check_Objects_Inserted_in_Base( void );
 	void Check_Columns_Insertion( void );
+
+	// previously valid orientation matrix;
+	std::vector<std::vector<float>> or_mat_prev;
 };
 
 #endif // _PROCESS_IMAGE_TOY_ROBOT_FULL_SVS_H_

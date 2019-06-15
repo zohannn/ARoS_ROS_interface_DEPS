@@ -40,6 +40,7 @@ public:
 public:
 	void get_Position_ObjectType( int object, CMessage * msg );
 	void get_Orientation_ObjectType( int object, CMessage * msg );
+	void get_Orientation_matrix_ObjectType( int object, CMessage * msg );
 	void get_PositionOrientation_ObjectType( int object, CMessage * msg );
 	void get_PositionOrientationInserted_ObjectType( unsigned int object, CMessage * msg );
 	bool get_PositionOfPointedObject( CMessage * msg );

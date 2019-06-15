@@ -116,6 +116,49 @@ void CYarpCommVisionBot::get_Orientation_ObjectType( int object, CMessage * msg 
 }
 
 
+void CYarpCommVisionBot::get_Orientation_matrix_ObjectType( int object, CMessage * msg )
+{
+	if( pDataSource == nullptr ) return;
+
+	size_t
+		i = 0, 
+		number_objects = 0;
+
+	std::vector<float> xv(3); xv.at(0)=1.0; xv.at(1)=0.0; xv.at(2)=0.0;
+	std::vector<float> yv(3); yv.at(0)=0.0; yv.at(1)=1.0; yv.at(2)=0.0;
+	std::vector<float> zv(3); zv.at(0)=0.0; zv.at(1)=0.0; zv.at(2)=1.0;
+	std::vector<std::vector<float>> or_mat(3); or_mat.at(0)=xv; or_mat.at(1)=yv; or_mat.at(2)=zv;
+
+	CData * pData = static_cast<CData*>( pDataSource );
+
+	pData->vObjects_Shared.lock();
+	
+	number_objects = pData->vObjects_Shared.Obj.at( object ).size();
+	
+	msg->uParam.assign( 1, 0 );
+
+	for( i=0 ; i<number_objects ; i++ )
+	{
+		if( !pData->vObjects_Shared.Obj.at( object ).at( i ).bVisible ) continue;
+
+		msg->uParam.front()++;
+
+		pData->vObjects_Shared.Obj.at( object ).at( i ).get_Orientation_matrix( or_mat );
+
+		// object type, and orientaton matrix
+		msg->fData.emplace_back( object );
+		std::vector<float> xr = or_mat.at(0); 
+		std::vector<float> yr = or_mat.at(1); 
+		std::vector<float> zr = or_mat.at(2);
+		msg->fData.emplace_back( xr.at(0) ); msg->fData.emplace_back( xr.at(1) ); msg->fData.emplace_back( xr.at(2) );
+		msg->fData.emplace_back( yr.at(0) ); msg->fData.emplace_back( yr.at(1) ); msg->fData.emplace_back( yr.at(2) );
+		msg->fData.emplace_back( zr.at(0) ); msg->fData.emplace_back( zr.at(1) ); msg->fData.emplace_back( zr.at(2) );
+	}
+
+	pData->vObjects_Shared.unlock();
+}
+
+
 void CYarpCommVisionBot::get_PositionOrientation_ObjectType( int object, CMessage * msg )
 {
 	if( pDataSource == nullptr ) return;
@@ -1209,6 +1252,13 @@ void CYarpCommVisionBot::Process_Commands_VisionBot( CMessage *msgIn, CMessage *
 	case VISION_BOT_GET_ORIENTATION_OBJECT_TYPE:
 		if( msgIn->uParam.size() > 0 )
 			get_Orientation_ObjectType( msgIn->uParam.front(), msgOut );
+		break;
+
+	//--------------------------------------------------------------------------
+	// Command to get orientation matrix about object types
+	case VISION_BOT_GET_ORIENTATION_MATRIX_OBJECT_TYPE:
+		if( msgIn->uParam.size() > 0 )
+			get_Orientation_matrix_ObjectType( msgIn->uParam.front(), msgOut );
 		break;
 
 	//--------------------------------------------------------------------------

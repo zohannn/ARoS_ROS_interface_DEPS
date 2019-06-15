@@ -396,6 +396,12 @@ protected:
 		Orientation.y = tZero;
 		Orientation.z = tZero;
 
+		std::vector<float> xv(3); xv.at(0)=1.0; xv.at(1)=0.0; xv.at(2)=0.0;
+		std::vector<float> yv(3); yv.at(0)=0.0; yv.at(1)=1.0; yv.at(2)=0.0;
+		std::vector<float> zv(3); zv.at(0)=0.0; zv.at(1)=0.0; zv.at(2)=1.0;
+		std::vector<std::vector<float>> or_mat(3); or_mat.at(0)=xv; or_mat.at(1)=yv; or_mat.at(2)=zv;
+		Orientation_matrix = or_mat;
+
 		PanTilt.x = tZero;
 		PanTilt.y = tZero;
 	};
