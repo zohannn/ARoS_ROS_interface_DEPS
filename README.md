@@ -1,2 +1,2 @@
-# ARoS_ROS_interface_DEPS
-Dependencies of the ARoS_ROS_interface
+# ARoS ROS Interface Dependencies
+Dependencies of the [ARoS ROS Interface](https://github.com/zohannn/ARoS_ROS_interface)
